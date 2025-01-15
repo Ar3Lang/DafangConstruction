@@ -1,0 +1,23 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "sss",
+    "sbs",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "architextures:granite_gray",
+      "data": 1
+    },
+    "b":{
+      "item": "minecraft:stone_slab",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "architextures:granite_gray",
+    "data": 7,
+    "count": 8
+  }
+}

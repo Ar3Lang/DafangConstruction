@@ -1,0 +1,22 @@
+{
+  "result": {
+    "item": "architextures:concrete_vintage",
+    "data": 11,
+    "count": 12
+  },
+  "ingredients": [
+    [{"item": "minecraft:concrete","data": 32767}],
+    [{"item": "minecraft:concrete","data": 32767}],
+    [{"item": "minecraft:concrete","data": 32767}],
+    [{"item": "minecraft:concrete","data": 32767}],
+    [{"item": "minecraft:concrete","data": 32767}],
+    [{"item": "minecraft:concrete","data": 32767}],
+    [{
+      "type": "forge:ore_dict",
+      "ore": "gemLapis"
+    }],
+    [{"item": "minecraft:dye","data": 7}],
+    [{"item": "minecraft:clay_ball"}]
+  ],
+  "type": "forge:ore_shapeless"
+}

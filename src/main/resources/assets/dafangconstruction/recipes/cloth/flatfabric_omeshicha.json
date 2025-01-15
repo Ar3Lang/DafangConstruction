@@ -1,0 +1,32 @@
+{
+  "result": {
+    "item": "architextures:flatfabric_vintage",
+    "data": 8,
+    "count": 12
+  },
+  "ingredients": [
+    [{
+      "type": "forge:ore_dict",
+      "ore": "wool"
+    }],    [{
+      "type": "forge:ore_dict",
+      "ore": "wool"
+    }],    [{
+      "type": "forge:ore_dict",
+      "ore": "wool"
+    }],    [{
+      "type": "forge:ore_dict",
+      "ore": "wool"
+    }],    [{
+      "type": "forge:ore_dict",
+      "ore": "wool"
+    }],    [{
+      "type": "forge:ore_dict",
+      "ore": "wool"
+    }],
+    [{"item": "minecraft:dye","data": 6}],
+    [{"item": "minecraft:dye","data": 8}],
+    [{"item": "minecraft:clay_ball"}]
+  ],
+  "type": "forge:ore_shapeless"
+}

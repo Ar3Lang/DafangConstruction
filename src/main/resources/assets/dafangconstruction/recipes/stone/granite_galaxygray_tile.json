@@ -1,0 +1,21 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "ssb",
+    "bss"
+  ],
+  "key": {
+    "s": {
+      "item": "architextures:granite_galaxygray",
+      "data": 1
+    },
+    "b": {
+      "item": "minecraft:brick"
+    }
+  },
+  "result": {
+    "item": "architextures:granite_galaxygray",
+    "data": 6,
+    "count": 6
+  }
+}

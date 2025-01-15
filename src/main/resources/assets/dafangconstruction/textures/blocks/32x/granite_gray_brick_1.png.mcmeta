@@ -1,0 +1,12 @@
+{
+    "ctm": {
+        "ctm_version": 1,
+        "type": "pattern",
+        "extra": {
+            "size": 2
+        },
+        "textures":[
+            "architextures:blocks/granite_gray_brick_1"
+        ]
+    }
+}

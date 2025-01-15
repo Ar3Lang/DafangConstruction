@@ -1,0 +1,18 @@
+{
+  "forge_marker": 1,
+  "defaults": { "model": "cube_all" },
+  "variants": {
+    "inventory": [{}],
+    "variant=default":  [{ "textures": { "all": "architextures:blocks/granite_gray"} }],
+    "variant=brick1":  [{ "textures": { "all": "architextures:blocks/granite_gray_brick_1"} }],
+    "variant=brick2":  [{ "textures": { "all": "architextures:blocks/granite_gray_brick_2"} }],
+    "variant=brick3":  [{ "textures": { "all": "architextures:blocks/granite_gray_brick_3"} }],
+    "variant=matte":  [{ "textures": { "all": "architextures:blocks/granite_gray_matte"} }],
+    "variant=polished":  [{ "textures": { "all": "architextures:blocks/granite_gray_polished"} }],
+    "variant=tile":  [{ "textures": { "all": "architextures:blocks/granite_gray_tile"} }],
+    "variant=brick_mushroom": [{
+      "model": "architextures:brick_mushroom",
+      "textures": { "all": "architextures:blocks/32x/granite_gray_brick_mushroom"}
+    }]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "result": {
+    "item": "architextures:concrete_vintage",
+    "data": 12,
+    "count": 12
+  },
+  "ingredients": [
+    [{"item": "minecraft:concrete","data": 32767}],
+    [{"item": "minecraft:concrete","data": 32767}],
+    [{"item": "minecraft:concrete","data": 32767}],
+    [{"item": "minecraft:concrete","data": 32767}],
+    [{"item": "minecraft:concrete","data": 32767}],
+    [{"item": "minecraft:concrete","data": 32767}],
+    [{"item": "minecraft:double_plant","data": 1}],
+    [{"item": "minecraft:clay_ball"}]
+  ],
+  "type": "forge:ore_shapeless"
+}

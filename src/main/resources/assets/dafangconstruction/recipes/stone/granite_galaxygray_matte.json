@@ -1,0 +1,22 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "sss",
+    "sfs",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "architextures:granite_galaxygray",
+      "data": 0
+    },
+    "f": {
+      "item": "minecraft:flint"
+    }
+  },
+  "result": {
+    "item": "architextures:granite_galaxygray",
+    "data": 4,
+    "count": 8
+  }
+}

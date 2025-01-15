@@ -1,0 +1,25 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_all"
+  },
+  "variants": {
+    "inventory": [{}],
+    "variant=pale":  [{ "textures": { "all": "dafangconstruction:blocks/concrete/concrete_pale"} }],
+    "variant=carrot":  [{ "textures": { "all": "dafangconstruction:blocks/concrete/concrete_carrot"} }],
+    "variant=lotus":  [{ "textures": { "all": "dafangconstruction:blocks/concrete/concrete_lotus"} }],
+    "variant=marigold":  [{ "textures": { "all": "dafangconstruction:blocks/concrete/concrete_marigold"} }],
+    "variant=faintyellow":  [{ "textures": { "all": "dafangconstruction:blocks/concrete/concrete_faintyellow"} }],
+    "variant=lime":  [{ "textures": { "all": "dafangconstruction:blocks/concrete/concrete_lime"} }],
+    "variant=mint":  [{ "textures": { "all": "dafangconstruction:blocks/concrete/concrete_mint"} }],
+    "variant=emerald":  [{ "textures": { "all": "dafangconstruction:blocks/concrete/concrete_emerald"} }],
+    "variant=omeshicha":  [{ "textures": { "all": "dafangconstruction:blocks/concrete/concrete_omeshicha"} }],
+    "variant=bright":  [{ "textures": { "all": "dafangconstruction:blocks/concrete/concrete_bright"} }],
+    "variant=neonblue":  [{ "textures": { "all": "dafangconstruction:blocks/concrete/concrete_neonblue"} }],
+    "variant=ultramarine":  [{ "textures": { "all": "dafangconstruction:blocks/concrete/concrete_ultramarine"} }],
+    "variant=lilac":  [{ "textures": { "all": "dafangconstruction:blocks/concrete/concrete_lilac"} }],
+    "variant=wisteria":  [{ "textures": { "all": "dafangconstruction:blocks/concrete/concrete_wisteria"} }],
+    "variant=grape":  [{ "textures": { "all": "dafangconstruction:blocks/concrete/concrete_grape"} }],
+    "variant=yanhong":  [{ "textures": { "all": "dafangconstruction:blocks/concrete/concrete_yanhong"} }]
+  }
+}

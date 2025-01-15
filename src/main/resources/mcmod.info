@@ -1,0 +1,16 @@
+[
+{
+  "modid": "architextures",
+  "name": "Architextures",
+  "description": "A mod provided some blocks. Remember to have CTM loaded.",
+  "version": 1.0,
+  "mcversion": "${mcversion}",
+  "url": "https://ar3lang.github.io/",
+  "updateUrl": "",
+  "authorList": ["Ar3Lang, Astrison"],
+  "credits": "\u00A77\u00A7oThis is my first mod, designed to add some blocks in my mimds (mostly in modern style).Thanks to CE_Pikayan for providing me with the opportunity to test in the server.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": ["ctm"]
+}
+]

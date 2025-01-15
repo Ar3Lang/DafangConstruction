@@ -1,0 +1,19 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "ss",
+    "ss",
+    "ss"
+  ],
+  "key": {
+    "s": {
+      "item": "architextures:granite_gray",
+      "data": 1
+    }
+  },
+  "result": {
+    "item": "architextures:granite_gray",
+    "data": 3,
+    "count": 6
+  }
+}

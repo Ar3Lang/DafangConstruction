@@ -1,0 +1,21 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "sst",
+    "tss"
+  ],
+  "key": {
+    "s": {
+      "item": "architextures:granite_gray",
+      "data": 1
+    },
+    "t": {
+      "item": "minecraft:hardened_clay"
+    }
+  },
+  "result": {
+    "item": "architextures:granite_gray",
+    "data": 6,
+    "count": 6
+  }
+}
