@@ -20,7 +20,7 @@ public class RegisterBlock {
     public static ArrayList<Block> RegisterBuffer = new ArrayList<>();
     public static ArrayList<Block> RegisterBufferHasMeta = new ArrayList<>();
     //define ROCK
-    public static Block ROCK_GRANITE_YELLOWRUST;
+    public static DafangBlock ROCK_GRANITE_YELLOWRUST;
     public static Block ROCK_GRANITE_GRAY;
     public static Block ROCK_GRANITE_RED;
     public static Block ROCK_GRANITE_GALAXYGRAY;
@@ -59,3 +59,4 @@ public class RegisterBlock {
 
     }
 }
+

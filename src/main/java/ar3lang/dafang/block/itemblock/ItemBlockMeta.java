@@ -1,7 +1,9 @@
 package ar3lang.dafang.block.itemblock;
 
+import ar3lang.dafang.block.DafangBlock;
 import ar3lang.dafang.block.cloth.FlatFabricVintage;
 import ar3lang.dafang.block.stone.*;
+import ar3lang.dafang.block.stone.base.IBlockMeta;
 import ar3lang.dafang.block.stone.base.VariantBase1;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -33,9 +35,10 @@ public class ItemBlockMeta extends ItemBlock {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public @NotNull String getTranslationKey(@NotNull ItemStack stack) {
+		if(block instanceof IBlockMeta){
+			return ((DafangBlock) block).getTranslationKey(stack);
+		}
 		switch (block.getTranslationKey()){
-//			case "tile.granite_yellowrust":
-//				return block.getTranslationKey();
 			case "tile.granite_gray":
 				return GraniteGray.EnumType.values()[getMetadata(stack)].getTranslationKey();
 			case "tile.granite_red":
@@ -50,7 +53,7 @@ public class ItemBlockMeta extends ItemBlock {
 			default:
 				return block.getTranslationKey();
 		}
-    }
+	}
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void addInformation(@NotNull ItemStack stack, @Nullable World worldIn, List<String> tooltip, @NotNull ITooltipFlag flagIn) {

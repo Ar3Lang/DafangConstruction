@@ -1,8 +1,8 @@
 package ar3lang.dafang.block.stone.base;
 
 import ar3lang.dafang.DafangConstruction;
+import ar3lang.dafang.block.DafangBlock;
 import ar3lang.dafang.block.RegisterBlock;
-import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -15,8 +15,10 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
 
-public class VariantBase1 extends Block implements IBlockMeta {
+
+public class VariantBase1 extends DafangBlock implements IBlockMeta {
     private static final PropertyEnum<EnumType1> VARIANT = PropertyEnum.create("variant", EnumType1.class);
     private String name;
 
@@ -25,6 +27,7 @@ public class VariantBase1 extends Block implements IBlockMeta {
         init(name);
     }
     private void init(String name) {
+        writeVariantType();
         setRegistryName(name);
         setTranslationKey(name);
         setHardness(1F);
@@ -59,15 +62,12 @@ public class VariantBase1 extends Block implements IBlockMeta {
     }
 
     @Override
-    public String getTranslationKey(ItemStack stack) {
-        return this.name+
-                "_"+
-                EnumType1.getSpecialNameFromMeta(stack.getItemDamage());
-    }
-
-    @Override
-    public String getDesc(ItemStack stack) {
-        return getTranslationKey()+".desc";
+    public void writeVariantType() {
+        System.out.println("你好");
+        for (EnumType1 s: EnumType1.values()) {
+            variantType.add(s.getName());
+        }
+        System.out.println("你好2");
     }
 
 
@@ -86,7 +86,6 @@ public class VariantBase1 extends Block implements IBlockMeta {
         }
         private static final EnumType1[] META_LOOKUP = new EnumType1[values().length];
         static {
-//            META_LOOKUP[01234] = EnumType1.DEFAULT...;
             for (EnumType1 b : values()) { META_LOOKUP[b.getMetadata()] = b; }
         }
 
