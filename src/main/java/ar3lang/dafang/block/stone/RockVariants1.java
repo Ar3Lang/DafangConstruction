@@ -1,18 +1,26 @@
 package ar3lang.dafang.block.stone;
 
+import ar3lang.dafang.DafangConstruction;
 import ar3lang.dafang.block.stone.base.VariantBase1;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 
 
-public class GraniteYellowrust extends VariantBase1 {
-    public GraniteYellowrust(String name) {
-        super(name);
+public class RockVariants1 extends VariantBase1 {
+    public RockVariants1(String name) {
+        super(Material.ROCK,name);
+
+        setHardness(1F);
+        setSoundType(SoundType.STONE);
+        setHarvestLevel("pickaxe", 0);
+        setCreativeTab(DafangConstruction.ARCH_Tab);
     }
 }
-//public class GraniteYellowrust extends VariantBase1
+//public class RockVariants1 extends VariantBase1
 //{
 
 //    public static final PropertyEnum<VariantBase1.EnumType1> VARIANT = PropertyEnum.create("variant", VariantBase1.EnumType1.class);
-//    public GraniteYellowrust(String name) {
+//    public RockVariants1(String name) {
 //        super(name);
 //    }
 //

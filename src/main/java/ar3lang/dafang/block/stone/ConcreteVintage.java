@@ -1,8 +1,9 @@
 package ar3lang.dafang.block.stone;
 
 import ar3lang.dafang.DafangConstruction;
+import ar3lang.dafang.block.DafangBlock;
 import ar3lang.dafang.block.RegisterBlock;
-import net.minecraft.block.Block;
+import ar3lang.dafang.block.stone.base.IBlockMeta;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -15,7 +16,7 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
 import org.jetbrains.annotations.NotNull;
 
-public class ConcreteVintage extends Block {
+public class ConcreteVintage extends DafangBlock implements IBlockMeta {
 
     public static final PropertyEnum<EnumType> VARIANT = PropertyEnum.create("variant", EnumType.class);
     public ConcreteVintage(String name) {
@@ -30,6 +31,7 @@ public class ConcreteVintage extends Block {
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumType.DEFAULT));
         setCreativeTab(DafangConstruction.ARCH_Tab);
 
+        writeVariantType();
         RegisterBlock.RegisterBufferHasMeta.add(this);
     }
 
@@ -60,6 +62,11 @@ public class ConcreteVintage extends Block {
     protected @NotNull BlockStateContainer createBlockState()
     {
         return new BlockStateContainer(this, new IProperty[] {VARIANT});
+    }
+
+    @Override
+    public void writeVariantType() {
+        for (EnumType s: EnumType.values()) {variantType.add(s.getName());}
     }
 
     public enum EnumType implements IStringSerializable

@@ -1,7 +1,9 @@
 package ar3lang.dafang.block.cloth;
 
 import ar3lang.dafang.DafangConstruction;
+import ar3lang.dafang.block.DafangBlock;
 import ar3lang.dafang.block.RegisterBlock;
+import ar3lang.dafang.block.stone.base.IBlockMeta;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -15,7 +17,7 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
 import org.jetbrains.annotations.NotNull;
 
-public class FlatFabricVintage extends Block {
+public class FlatFabricVintage extends DafangBlock implements IBlockMeta {
     public static final PropertyEnum<FlatFabricVintage.EnumType> VARIANT = PropertyEnum.create("variant", FlatFabricVintage.EnumType.class);
     public FlatFabricVintage(String name)
     {
@@ -31,6 +33,7 @@ public class FlatFabricVintage extends Block {
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, FlatFabricVintage.EnumType.DEFAULT));
         this.setCreativeTab(DafangConstruction.ARCH_Tab);
 
+        writeVariantType();
         RegisterBlock.RegisterBufferHasMeta.add(this);
     }
 
@@ -60,7 +63,13 @@ public class FlatFabricVintage extends Block {
     {
         return new BlockStateContainer(this, new IProperty[] {VARIANT});
     }
-    public static enum EnumType implements IStringSerializable
+
+    @Override
+    public void writeVariantType() {
+        for (EnumType s: EnumType.values()) {variantType.add(s.getName());}
+    }
+
+    public enum EnumType implements IStringSerializable
     {
         DEFAULT(0, "pale", "flatfabric_pale"),//75878a 苍色
         CARROT(1,"carrot","flatfabric_carrot"),//f79078 胡罗贝

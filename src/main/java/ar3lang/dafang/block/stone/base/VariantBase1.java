@@ -15,29 +15,33 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Arrays;
 
 
 public class VariantBase1 extends DafangBlock implements IBlockMeta {
     private static final PropertyEnum<EnumType1> VARIANT = PropertyEnum.create("variant", EnumType1.class);
-    private String name;
+    @Override
+    public void writeVariantType() {
+        for (EnumType1 s: EnumType1.values()) {
+            variantType.add(s.getName());
+        }
+    }
 
     public VariantBase1(String name) {
-        super(Material.ROCK);
-        init(name);
+        this(Material.ROCK,name);
+        setHardness(1F); setSoundType(SoundType.STONE); setHarvestLevel("pickaxe", 0); setCreativeTab(DafangConstruction.ARCH_Tab);
     }
-    private void init(String name) {
-        writeVariantType();
+    public VariantBase1(Material materialIn,String name){
+        super(materialIn);
         setRegistryName(name);
         setTranslationKey(name);
-        setHardness(1F);
-        setSoundType(SoundType.STONE);
-        setHarvestLevel("pickaxe", 0);
-        setCreativeTab(DafangConstruction.ARCH_Tab);
-        this.name = name;
+
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, EnumType1.DEFAULT));
+
+        writeVariantType();
         RegisterBlock.RegisterBufferHasMeta.add(this);
     }
+
+
 
     public int damageDropped(@NotNull IBlockState state) {
         return state.getValue(VARIANT).getMetadata();
@@ -47,7 +51,6 @@ public class VariantBase1 extends DafangBlock implements IBlockMeta {
             list.add(new ItemStack(this, 1, b.getMetadata()));
         }
     }
-
 
     protected @NotNull BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, new IProperty[] {VARIANT});
@@ -59,15 +62,6 @@ public class VariantBase1 extends DafangBlock implements IBlockMeta {
     @Override
     public int getMetaFromState(IBlockState state) {
         return state.getValue(VARIANT).getMetadata();
-    }
-
-    @Override
-    public void writeVariantType() {
-        System.out.println("你好");
-        for (EnumType1 s: EnumType1.values()) {
-            variantType.add(s.getName());
-        }
-        System.out.println("你好2");
     }
 
 
@@ -92,10 +86,6 @@ public class VariantBase1 extends DafangBlock implements IBlockMeta {
         final int meta;
         final String specialName;
 
-        public static String getSpecialNameFromMeta(int meta) {
-            return values()[meta].getName();
-//            for (EnumType1 e : EnumType1.values()) { if (e.meta == meta) return e.specialName; }
-        }
         @Override
         public @NotNull String getName() {
             return specialName;

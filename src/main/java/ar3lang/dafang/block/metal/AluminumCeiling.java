@@ -1,6 +1,7 @@
 package ar3lang.dafang.block.metal;
 
 import ar3lang.dafang.DafangConstruction;
+import ar3lang.dafang.block.DafangBlock;
 import ar3lang.dafang.block.RegisterBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -15,7 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 
-public class AluminumCeiling extends Block {
+public class AluminumCeiling extends DafangBlock {
     public static final PropertyBool TOP = PropertyBool.create("top");
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
     public AluminumCeiling(String name) {
@@ -30,7 +31,7 @@ public class AluminumCeiling extends Block {
         this.setDefaultState(this.blockState.getBaseState().withProperty(TOP, false).withProperty(FACING,EnumFacing.SOUTH));
         this.setCreativeTab(DafangConstruction.ARCH_Tab);
 
-        RegisterBlock.RegisterBufferHasMeta.add(this);
+//        RegisterBlock.RegisterBufferHasMeta.add(this);
     }
     @Override
     public IBlockState getStateFromMeta(int meta){

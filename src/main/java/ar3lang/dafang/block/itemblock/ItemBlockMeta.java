@@ -4,9 +4,7 @@ import ar3lang.dafang.block.DafangBlock;
 import ar3lang.dafang.block.cloth.FlatFabricVintage;
 import ar3lang.dafang.block.stone.*;
 import ar3lang.dafang.block.stone.base.IBlockMeta;
-import ar3lang.dafang.block.stone.base.VariantBase1;
 import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemBlock;
@@ -39,12 +37,6 @@ public class ItemBlockMeta extends ItemBlock {
 			return ((DafangBlock) block).getTranslationKey(stack);
 		}
 		switch (block.getTranslationKey()){
-			case "tile.granite_gray":
-				return GraniteGray.EnumType.values()[getMetadata(stack)].getTranslationKey();
-			case "tile.granite_red":
-				return GraniteRed.EnumType.values()[getMetadata(stack)].getTranslationKey();
-			case "tile.granite_galaxygray":
-				return GraniteGalaxyGray.EnumType.values()[getMetadata(stack)].getTranslationKey();
 			case "tile.flatfabric_vintage":
 				return FlatFabricVintage.EnumType.values()[getMetadata(stack)].getTranslationKey();
 			case "tile.concrete_vintage":

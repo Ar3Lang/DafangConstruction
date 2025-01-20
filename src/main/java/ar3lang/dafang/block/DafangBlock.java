@@ -9,16 +9,26 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 
 public class DafangBlock extends Block {
-    private String translationKey;
-    protected ArrayList<String> variantType = new ArrayList<>();
+
+    protected String name;
+    //存储PropertyEnum枚举名字
+    public ArrayList<String> variantType = new ArrayList<String>();
+
+
     public DafangBlock(Material materialIn) {
         super(materialIn);
     }
+    public DafangBlock(Material materialIn,String name) {
+        super(materialIn);
+        setRegistryName(name);
+        setTranslationKey(name);
+    }
+
 
     public String getTranslationKey(ItemStack stack){
-        return this.translationKey+"_"+ variantType.get(stack.getMetadata());
+        return this.name +"_"+ variantType.get(stack.getMetadata());
     }
     public @NotNull Block setTranslationKey(String key){
-        translationKey = key; return this;
+        name = key; return this;
     }
 }
