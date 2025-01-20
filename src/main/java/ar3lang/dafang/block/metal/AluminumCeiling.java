@@ -1,4 +1,4 @@
-package ar3lang.dafang.block.ceiling;
+package ar3lang.dafang.block.metal;
 
 import ar3lang.dafang.DafangConstruction;
 import ar3lang.dafang.block.RegisterBlock;

@@ -2,6 +2,7 @@ package ar3lang.dafang;
 
 import ar3lang.dafang.block.cloth.FlatFabricVintage;
 import ar3lang.dafang.block.stone.*;
+import ar3lang.dafang.block.stone.base.VariantBase1;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -10,22 +11,25 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import static ar3lang.dafang.block.RegisterBlock.*;
-import static ar3lang.dafang.proxy.ClientProxy.registerRenderSlab;
-import static ar3lang.dafang.proxy.ClientProxy.registerRenderVariant;
+import static ar3lang.dafang.proxy.ClientProxy.*;
 
 @Mod.EventBusSubscriber(modid = DafangConstruction.MODID)
 public class ModelRegInit {
     @SideOnly(Side.CLIENT)
     @SubscribeEvent
     public static void modelRegMetaInit(ModelRegistryEvent event){
-        registerRenderVariant(ROCK_GRANITE_YELLOWRUST,0, GraniteYellowrust.EnumType.values()[0].getName());
-        registerRenderVariant(ROCK_GRANITE_YELLOWRUST,1, GraniteYellowrust.EnumType.values()[1].getName());
-        registerRenderVariant(ROCK_GRANITE_YELLOWRUST,2, GraniteYellowrust.EnumType.values()[2].getName());
-        registerRenderVariant(ROCK_GRANITE_YELLOWRUST,3, GraniteYellowrust.EnumType.values()[3].getName());
-        registerRenderVariant(ROCK_GRANITE_YELLOWRUST,4, GraniteYellowrust.EnumType.values()[4].getName());
-        registerRenderVariant(ROCK_GRANITE_YELLOWRUST,5, GraniteYellowrust.EnumType.values()[5].getName());
-        registerRenderVariant(ROCK_GRANITE_YELLOWRUST,6, GraniteYellowrust.EnumType.values()[6].getName());
-        registerRenderVariant(ROCK_GRANITE_YELLOWRUST,7, GraniteYellowrust.EnumType.values()[7].getName());
+        for (VariantBase1.EnumType1 e : VariantBase1.EnumType1.values()){
+            registerRender(ROCK_GRANITE_YELLOWRUST,e.getMetadata(),e.getName());
+            //以后在这写所有由EnumType1类的对象
+        }
+//
+//        registerRenderVariant(ROCK_GRANITE_YELLOWRUST,1, VariantBase1.VARIANT.getName());
+//        registerRenderVariant(ROCK_GRANITE_YELLOWRUST,2, VariantBase1.VARIANT.getName());
+//        registerRenderVariant(ROCK_GRANITE_YELLOWRUST,3, VariantBase1.VARIANT.getName());
+//        registerRenderVariant(ROCK_GRANITE_YELLOWRUST,4, VariantBase1.VARIANT.getName());
+//        registerRenderVariant(ROCK_GRANITE_YELLOWRUST,5, VariantBase1.VARIANT.getName());
+//        registerRenderVariant(ROCK_GRANITE_YELLOWRUST,6, VariantBase1.VARIANT.getName());
+//        registerRenderVariant(ROCK_GRANITE_YELLOWRUST,7, VariantBase1.VARIANT.getName());
         registerRenderVariant(ROCK_GRANITE_GRAY,0, GraniteGray.EnumType.values()[0].getName());
         registerRenderVariant(ROCK_GRANITE_GRAY,1, GraniteGray.EnumType.values()[1].getName());
         registerRenderVariant(ROCK_GRANITE_GRAY,2, GraniteGray.EnumType.values()[2].getName());

@@ -1,10 +1,11 @@
 package ar3lang.dafang.block;
 
 import ar3lang.dafang.DafangConstruction;
-import ar3lang.dafang.block.ceiling.AluminumCeiling;
+import ar3lang.dafang.block.metal.AluminumCeiling;
 import ar3lang.dafang.block.cloth.FlatFabricVintage;
 import ar3lang.dafang.block.itemblock.ItemBlockMeta;
 import ar3lang.dafang.block.stone.*;
+import ar3lang.dafang.block.stone.base.VariantBase1;
 import ar3lang.dafang.item.RegisterItem;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
