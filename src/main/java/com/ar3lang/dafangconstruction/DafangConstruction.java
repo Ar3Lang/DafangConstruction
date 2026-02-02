@@ -1,5 +1,6 @@
 package com.ar3lang.dafangconstruction;
 
+import com.google.common.reflect.Reflection;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -18,6 +19,11 @@ public class DafangConstruction implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+        Reflection.initialize(DafangTags.class);
+        Reflection.initialize(DafangBlocks.class);
+        Reflection.initialize(DafangItemGroup.class);
+
+        DafangItemGroup.init();
 
 		LOGGER.info("Hello Fabric world!");
 	}
