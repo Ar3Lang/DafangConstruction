@@ -1,17 +1,28 @@
 package com.ar3lang.dafangconstruction;
 
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import static com.ar3lang.dafangconstruction.DafangBlocks.*;
 
 public class DafangItemGroup {
-    public static final RegistryKey<ItemGroup> DAFANG_ITEMGROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(DafangConstruction.MOD_ID, "dafang_construction"));
+    public static final RegistryKey<ItemGroup> DAFANG_ITEMGROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(DafangConstruction.MOD_ID, "dafangconstruction"));
 
     public static void init() {
+        Registry.register(Registries.ITEM_GROUP, DAFANG_ITEMGROUP, FabricItemGroup.builder()
+            .displayName(Text.translatable("dafang.itemgroup"))
+            .icon(() -> new ItemStack(Blocks.BRICKS))
+            .build()
+        );
         ItemGroupEvents.modifyEntriesEvent(DAFANG_ITEMGROUP).register((entries) -> {
             entries.add(GRANITE_YELLOWRUST);
             entries.add(GRANITE_YELLOWRUST_BRICK_1);

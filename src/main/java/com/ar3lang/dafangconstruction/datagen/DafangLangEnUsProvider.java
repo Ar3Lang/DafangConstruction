@@ -13,7 +13,7 @@ public class DafangLangEnUsProvider extends FabricLanguageProvider {
     @Override
     public void generateTranslations(TranslationBuilder translationBuilder) {
         translationBuilder.add(DafangBlocks.GRANITE_YELLOWRUST,"黄锈花岗岩");
-        translationBuilder.add("dafang.tooltip.granite_yellowrust","  黄锈花岗岩是一种常见的用于建材的亮黄色花岗岩，以其独特的黄色纹理和锈斑而闻名。\\n  在中国，南方以福建锈石为主，北方山东汶上锈石比较有名。\\n  可进行磨光板、火烧板、薄板、台面板、环境石、地铺石、路延石、小方块、墙壁石、石制家具、石雕等制作。");
+        translationBuilder.add("dafang.tooltip.granite_yellowrust","  黄锈花岗岩是一种常见的用于建材的亮黄色花岗岩，以其独特的黄色纹理和锈斑而闻名。\n  在中国，南方以福建锈石为主，北方山东汶上锈石比较有名。\n  可进行磨光板、火烧板、薄板、台面板、环境石、地铺石、路延石、小方块、墙壁石、石制家具、石雕等制作。");
         translationBuilder.add(DafangBlocks.GRANITE_YELLOWRUST_BRICK_1,"黄锈花岗岩大型砖");
         translationBuilder.add(DafangBlocks.GRANITE_YELLOWRUST_BRICK_2,"黄锈花岗岩大型砖砖");
         translationBuilder.add(DafangBlocks.GRANITE_YELLOWRUST_BRICK_3,"黄锈花岗岩大型砖砖");
@@ -26,6 +26,7 @@ public class DafangLangEnUsProvider extends FabricLanguageProvider {
         //Tooltip
         translationBuilder.add("dafang.tooltip.titles.tags","标签");
         translationBuilder.add("dafang.tooltip.titles.info","简介");
+
         translationBuilder.add("dafang.tag.rock","岩石");
         translationBuilder.add("dafang.tag.wool","羊毛");
         translationBuilder.add("dafang.tag.wood","木材");

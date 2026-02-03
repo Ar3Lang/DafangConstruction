@@ -47,7 +47,25 @@ public class DafangTooltipBlockItem extends BlockItem {
         //添加简介tooltip
         if (hasInfo){
             tooltip.add(Text.translatable("dafang.tooltip.titles.info").formatted(Formatting.DARK_GRAY,Formatting.BOLD));
-            tooltip.add(Text.translatable(Info).formatted(Formatting.DARK_PURPLE,Formatting.ITALIC));
+            String infos = Text.translatable(Info).getString();
+            for (String line : infos.split("\\\\n")) {
+                StringBuilder currentLine = new StringBuilder();
+                int currentWidth = 0;
+                for (char c : line.toCharArray()) {
+                    int charWidth = (c <= 127) ? 1 : 2;
+                    if (currentWidth + charWidth > 40) {
+                        tooltip.add(Text.literal(currentLine.toString()).formatted(Formatting.DARK_PURPLE, Formatting.ITALIC));
+                        currentLine = new StringBuilder();
+                        currentWidth = 0;
+                    }
+                    currentLine.append(c);
+                    currentWidth += charWidth;
+                }
+                // 添加剩余部分
+                if (currentLine.length() > 0) {
+                    tooltip.add(Text.literal(currentLine.toString()).formatted(Formatting.DARK_PURPLE, Formatting.ITALIC));
+                }
+            }
             tooltip.add(Text.literal(""));
         }
         super.appendTooltip(stack, world, tooltip, context);
