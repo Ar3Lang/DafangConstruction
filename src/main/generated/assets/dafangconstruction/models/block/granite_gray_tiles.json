@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "dafangconstruction:block/granite_gray_tiles"
+  }
+}
