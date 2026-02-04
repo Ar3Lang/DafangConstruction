@@ -66,7 +66,6 @@ public class DafangTooltipBlockItem extends BlockItem {
                     tooltip.add(Text.literal(currentLine.toString()).formatted(Formatting.DARK_PURPLE, Formatting.ITALIC));
                 }
             }
-            tooltip.add(Text.literal(""));
         }
         super.appendTooltip(stack, world, tooltip, context);
     }
