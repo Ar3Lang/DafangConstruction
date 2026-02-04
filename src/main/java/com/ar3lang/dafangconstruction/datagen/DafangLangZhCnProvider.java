@@ -63,6 +63,7 @@ public class DafangLangZhCnProvider extends FabricLanguageProvider {
         translationBuilder.add("dafang.tag.wool","羊毛");
         translationBuilder.add("dafang.tag.wood","木材");
         translationBuilder.add("dafang.tag.metal","金属");
+        translationBuilder.add("dafang.tag.raw","母岩");
         translationBuilder.add("dafang.tag.vertical","垂直纹理");
         translationBuilder.add("dafang.tag.horizontal","水平纹理");
         translationBuilder.add("dafang.tag.random","随机纹理");

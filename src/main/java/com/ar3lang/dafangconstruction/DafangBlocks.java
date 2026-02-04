@@ -34,7 +34,7 @@ public class DafangBlocks {
     //# 石头类注册
     //## 黄锈石
     public static final Block GRANITE_YELLOWRUST = register("granite_yellowrust",new Block(FabricBlockSettings.copy(net.minecraft.block.Blocks.STONE)),new DafangTags[]{DafangTags.ROCK},true);
-    public static final Block GRANITE_YELLOWRUST_BRICK_1 = register("granite_yellowrust_brick1",new Block(FabricBlockSettings.copy(Blocks.STONE)));
+    public static final Block GRANITE_YELLOWRUST_BRICK_1 = register("granite_yellowrust_brick1",new Block(FabricBlockSettings.copy(Blocks.STONE)),new DafangTags[]{DafangTags.ROCK});
     public static final Block GRANITE_YELLOWRUST_BRICK_2 = register("granite_yellowrust_brick2",new Block(FabricBlockSettings.copy(Blocks.STONE)));
     public static final Block GRANITE_YELLOWRUST_BRICK_3 = register("granite_yellowrust_brick3",new Block(FabricBlockSettings.copy(Blocks.STONE)));
     public static final Block GRANITE_YELLOWRUST_BRICK_4 = register("granite_yellowrust_brick4",new Block(FabricBlockSettings.copy(Blocks.STONE)));

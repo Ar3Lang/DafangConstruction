@@ -20,7 +20,8 @@ repositories {
 }
 
 dependencies {
-	// To change the versions see the gradle.properties file
+
+  // To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
@@ -40,11 +41,54 @@ dependencies {
 	// Promenade
 	modImplementation "curse.maven:promenade-399648:${project.promenade_version}"
 	modImplementation "curse.maven:dawnapi-399309:${project.dawn_version}"
+
+  // Fusion
+//  modImplementation "curse.maven:fusion-854949:7471510"
+  modCompileOnly "curse.maven:fusion-854949:7471510"
+  modRuntimeOnly "curse.maven:fusion-854949:7471510"
+
+}
+sourceSets {
+  main {
+    // Java 源代码目录（保持不变）
+
+    // 资源目录：必须包含原有的 resources，再加上 generated
+    resources {
+      // srcDirs 默认已经包含 src/main/resources
+      // 我们只需要追加 generated
+      srcDirs += file("src/main/generated")
+    }
+  }
+}
+loom {
+  runs {
+    // 修改默认的 datagen 配置，强制使用客户端环境
+    datagen {
+      // 继承 client 运行配置（关键！）
+      inherit client
+
+      // 设置主类为数据生成器
+//      serverSourceClasses = false
+      source = sourceSets.main
+
+      // 强制设置为客户端环境
+      property "fabric.dli.env", "client"
+      property "fabric.dli.main", "net.fabricmc.loader.impl.launch.knot.KnotClient"
+
+      // DataGen 参数
+      property "fabric-api.datagen", ""
+      property "fabric-api.datagen.output-dir", file("src/main/generated").absolutePath
+      property "fabric-api.datagen.modid", "dafangconstruction"
+    }
+  }
 }
 
-fabricApi {
-	configureDataGeneration()
-}
+//fabricApi {
+//	configureDataGeneration(){
+////    createSourceSet = false  // 只用 main
+////    modId = "dafangconstruction"
+//  }
+//}
 
 processResources {
 	inputs.property "version", project.version

@@ -8,6 +8,7 @@ public enum DafangTags {
     METAL("dafang.tag.metal"),
 
     //纹理
+    RAW("dafang.tag.raw"),
     VERTICAL("dafang.tag.vertical"),
     HORIZONTAL("dafang.tag.horizontal"),
     RANDOM("dafang.tag.random"),

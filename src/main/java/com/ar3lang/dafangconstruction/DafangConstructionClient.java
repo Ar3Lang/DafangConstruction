@@ -1,12 +1,18 @@
 package com.ar3lang.dafangconstruction;
 
+import com.ar3lang.dafangconstruction.datagen.DafangLangEnUsProvider;
+import com.ar3lang.dafangconstruction.datagen.DafangLangZhCnProvider;
+import com.ar3lang.dafangconstruction.datagen.DafangModelProvider;
+import com.ar3lang.dafangconstruction.datagen.DafangTextureMetadataProvider;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
 public class DafangConstructionClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+
 //        ItemTooltipCallback.EVENT.register((stack, context, lines) -> {
 //            // 判断物品类型
 //            if (stack.isOf(BlockusBlocks.WHITE_OAK_LOG.asItem())) {

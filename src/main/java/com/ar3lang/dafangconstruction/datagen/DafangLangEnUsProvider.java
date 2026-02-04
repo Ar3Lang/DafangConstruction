@@ -1,7 +1,6 @@
 package com.ar3lang.dafangconstruction.datagen;
 
 import com.ar3lang.dafangconstruction.DafangBlocks;
-import com.ar3lang.dafangconstruction.DafangTooltipBlockItem;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
