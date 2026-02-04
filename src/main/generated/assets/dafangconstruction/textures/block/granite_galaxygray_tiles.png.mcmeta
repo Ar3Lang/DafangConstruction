@@ -1,0 +1,8 @@
+{
+  "fusion": {
+    "type": "fusion:random",
+    "columns": 3,
+    "count": 3,
+    "rows": 3
+  }
+}
