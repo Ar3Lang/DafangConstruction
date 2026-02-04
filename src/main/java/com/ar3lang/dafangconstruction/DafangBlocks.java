@@ -33,43 +33,43 @@ public class DafangBlocks {
 
     //# 石头类注册
     //## 黄锈石
-    public static final Block GRANITE_YELLOWRUST = register("granite_yellowrust",new Block(FabricBlockSettings.copy(net.minecraft.block.Blocks.STONE)),new DafangTags[]{DafangTags.ROCK},true);
-    public static final Block GRANITE_YELLOWRUST_BRICK_1 = register("granite_yellowrust_brick1",new Block(FabricBlockSettings.copy(Blocks.STONE)),new DafangTags[]{DafangTags.ROCK});
-    public static final Block GRANITE_YELLOWRUST_BRICK_2 = register("granite_yellowrust_brick2",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_YELLOWRUST_BRICK_3 = register("granite_yellowrust_brick3",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_YELLOWRUST_BRICK_4 = register("granite_yellowrust_brick4",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_YELLOWRUST_BRICK_5 = register("granite_yellowrust_brick5",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_YELLOWRUST_POLISHED = register("granite_yellowrust_polished",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_YELLOWRUST_MATTE = register("granite_yellowrust_matte",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_YELLOWRUST_TILES = register("granite_yellowrust_tiles",new Block(FabricBlockSettings.copy(Blocks.STONE)));
+    public static final Block GRANITE_YELLOWRUST = register("granite_yellowrust",new Block(FabricBlockSettings.copy(net.minecraft.block.Blocks.STONE)),new DafangTags[]{DafangTags.ROCK,DafangTags.RAW},true);
+    public static final Block GRANITE_YELLOWRUST_BRICK_1 = register("granite_yellowrust_brick1",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.CROSS,DafangTags.x2});
+    public static final Block GRANITE_YELLOWRUST_BRICK_2 = register("granite_yellowrust_brick2",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.HORIZONTAL,DafangTags.x2});
+    public static final Block GRANITE_YELLOWRUST_BRICK_3 = register("granite_yellowrust_brick3",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.HORIZONTAL,DafangTags.x1_5});
+    public static final Block GRANITE_YELLOWRUST_BRICK_4 = register("granite_yellowrust_brick4",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.VERTICAL,DafangTags.x2});
+    public static final Block GRANITE_YELLOWRUST_BRICK_5 = register("granite_yellowrust_brick5",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.VERTICAL,DafangTags.x1_5});
+    public static final Block GRANITE_YELLOWRUST_POLISHED = register("granite_yellowrust_polished",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.POLISHED,DafangTags.x1});
+    public static final Block GRANITE_YELLOWRUST_MATTE = register("granite_yellowrust_matte",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.MATTE});
+    public static final Block GRANITE_YELLOWRUST_TILES = register("granite_yellowrust_tiles",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.RANDOM,DafangTags.x1});
     //## 泛红花岗岩
-    public static final Block GRANITE_RED = register("granite_red",new Block(FabricBlockSettings.copy(net.minecraft.block.Blocks.STONE)),new DafangTags[]{DafangTags.ROCK},true);
-    public static final Block GRANITE_RED_BRICK_1 = register("granite_red_brick1",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_RED_BRICK_2 = register("granite_red_brick2",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_RED_BRICK_3 = register("granite_red_brick3",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_RED_BRICK_4 = register("granite_red_brick4",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_RED_BRICK_5 = register("granite_red_brick5",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_RED_POLISHED = register("granite_red_polished",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_RED_MATTE = register("granite_red_matte",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_RED_TILES = register("granite_red_tiles",new Block(FabricBlockSettings.copy(Blocks.STONE)));
+    public static final Block GRANITE_RED = register("granite_red",new Block(FabricBlockSettings.copy(net.minecraft.block.Blocks.STONE)),new DafangTags[]{DafangTags.ROCK,DafangTags.RAW},true);
+    public static final Block GRANITE_RED_BRICK_1 = register("granite_red_brick1",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.CROSS,DafangTags.x2});
+    public static final Block GRANITE_RED_BRICK_2 = register("granite_red_brick2",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.HORIZONTAL,DafangTags.x2});
+    public static final Block GRANITE_RED_BRICK_3 = register("granite_red_brick3",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.HORIZONTAL,DafangTags.x1_5});
+    public static final Block GRANITE_RED_BRICK_4 = register("granite_red_brick4",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.VERTICAL,DafangTags.x2});
+    public static final Block GRANITE_RED_BRICK_5 = register("granite_red_brick5",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.VERTICAL,DafangTags.x1_5});
+    public static final Block GRANITE_RED_POLISHED = register("granite_red_polished",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.POLISHED,DafangTags.x1});
+    public static final Block GRANITE_RED_MATTE = register("granite_red_matte",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.MATTE});
+    public static final Block GRANITE_RED_TILES = register("granite_red_tiles",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.RANDOM,DafangTags.x1});
     //## 银河灰花岗岩
-    public static final Block GRANITE_GALAXYGRAY = register("granite_galaxygray",new Block(FabricBlockSettings.copy(net.minecraft.block.Blocks.STONE)),new DafangTags[]{DafangTags.ROCK},true);
-    public static final Block GRANITE_GALAXYGRAY_BRICK_1 = register("granite_galaxygray_brick1",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_GALAXYGRAY_BRICK_2 = register("granite_galaxygray_brick2",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_GALAXYGRAY_BRICK_3 = register("granite_galaxygray_brick3",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_GALAXYGRAY_BRICK_4 = register("granite_galaxygray_brick4",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_GALAXYGRAY_BRICK_5 = register("granite_galaxygray_brick5",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_GALAXYGRAY_POLISHED = register("granite_galaxygray_polished",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_GALAXYGRAY_MATTE = register("granite_galaxygray_matte",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_GALAXYGRAY_TILES = register("granite_galaxygray_tiles",new Block(FabricBlockSettings.copy(Blocks.STONE)));
+    public static final Block GRANITE_GALAXYGRAY = register("granite_galaxygray",new Block(FabricBlockSettings.copy(net.minecraft.block.Blocks.STONE)),new DafangTags[]{DafangTags.ROCK,DafangTags.RAW},true);
+    public static final Block GRANITE_GALAXYGRAY_BRICK_1 = register("granite_galaxygray_brick1",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.CROSS,DafangTags.x2});
+    public static final Block GRANITE_GALAXYGRAY_BRICK_2 = register("granite_galaxygray_brick2",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.HORIZONTAL,DafangTags.x2});
+    public static final Block GRANITE_GALAXYGRAY_BRICK_3 = register("granite_galaxygray_brick3",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.HORIZONTAL,DafangTags.x1_5});
+    public static final Block GRANITE_GALAXYGRAY_BRICK_4 = register("granite_galaxygray_brick4",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.VERTICAL,DafangTags.x2});
+    public static final Block GRANITE_GALAXYGRAY_BRICK_5 = register("granite_galaxygray_brick5",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.VERTICAL,DafangTags.x1_5});
+    public static final Block GRANITE_GALAXYGRAY_POLISHED = register("granite_galaxygray_polished",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.POLISHED,DafangTags.x1});
+    public static final Block GRANITE_GALAXYGRAY_MATTE = register("granite_galaxygray_matte",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.MATTE});
+    public static final Block GRANITE_GALAXYGRAY_TILES = register("granite_galaxygray_tiles",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.RANDOM,DafangTags.x1});
     //# 灰花岗岩
-    public static final Block GRANITE_GRAY = register("granite_gray",new Block(FabricBlockSettings.copy(net.minecraft.block.Blocks.STONE)),new DafangTags[]{DafangTags.ROCK},true);
-    public static final Block GRANITE_GRAY_BRICK_1 = register("granite_gray_brick1",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_GRAY_BRICK_2 = register("granite_gray_brick2",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_GRAY_BRICK_3 = register("granite_gray_brick3",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_GRAY_BRICK_4 = register("granite_gray_brick4",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_GRAY_BRICK_5 = register("granite_gray_brick5",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_GRAY_POLISHED = register("granite_gray_polished",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_GRAY_MATTE = register("granite_gray_matte",new Block(FabricBlockSettings.copy(Blocks.STONE)));
-    public static final Block GRANITE_GRAY_TILES = register("granite_gray_tiles",new Block(FabricBlockSettings.copy(Blocks.STONE)));
+    public static final Block GRANITE_GRAY = register("granite_gray",new Block(FabricBlockSettings.copy(net.minecraft.block.Blocks.STONE)),new DafangTags[]{DafangTags.ROCK,DafangTags.RAW},true);
+    public static final Block GRANITE_GRAY_BRICK_1 = register("granite_gray_brick1",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.CROSS,DafangTags.x2});
+    public static final Block GRANITE_GRAY_BRICK_2 = register("granite_gray_brick2",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.HORIZONTAL,DafangTags.x2});
+    public static final Block GRANITE_GRAY_BRICK_3 = register("granite_gray_brick3",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.HORIZONTAL,DafangTags.x1_5});
+    public static final Block GRANITE_GRAY_BRICK_4 = register("granite_gray_brick4",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.VERTICAL,DafangTags.x2});
+    public static final Block GRANITE_GRAY_BRICK_5 = register("granite_gray_brick5",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.VERTICAL,DafangTags.x1_5});
+    public static final Block GRANITE_GRAY_POLISHED = register("granite_gray_polished",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.POLISHED,DafangTags.x1});
+    public static final Block GRANITE_GRAY_MATTE = register("granite_gray_matte",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.MATTE});
+    public static final Block GRANITE_GRAY_TILES = register("granite_gray_tiles",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.RANDOM,DafangTags.x1});
 }

@@ -1,6 +1,6 @@
 {
   "fusion": {
-    "type": "fusion:continuous",
+    "type": "continuous",
     "columns": 2,
     "rows": 2
   }

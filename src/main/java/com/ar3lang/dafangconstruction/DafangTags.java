@@ -9,6 +9,9 @@ public enum DafangTags {
 
     //纹理
     RAW("dafang.tag.raw"),
+    POLISHED("dafang.tag.polished"),
+    MATTE("dafang.tag.matte"),
+    FIRE("dafang.tag.fire"),
     VERTICAL("dafang.tag.vertical"),
     HORIZONTAL("dafang.tag.horizontal"),
     RANDOM("dafang.tag.random"),

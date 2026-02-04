@@ -1,9 +1,6 @@
 package com.ar3lang.dafangconstruction;
 
-import com.ar3lang.dafangconstruction.datagen.DafangLangEnUsProvider;
-import com.ar3lang.dafangconstruction.datagen.DafangLangZhCnProvider;
-import com.ar3lang.dafangconstruction.datagen.DafangModelProvider;
-import com.ar3lang.dafangconstruction.datagen.DafangTextureMetadataProvider;
+import com.ar3lang.dafangconstruction.datagen.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -16,6 +13,7 @@ public class DafangConstructionDataGenerator implements DataGeneratorEntrypoint 
         pack.addProvider(DafangLangZhCnProvider::new);
         pack.addProvider(DafangModelProvider::new);
         //最好在客户端执行本数据生成器
+        pack.addProvider(DafangFusionModelProvider::new);
         pack.addProvider(DafangTextureMetadataProvider::new);
 	}
 }

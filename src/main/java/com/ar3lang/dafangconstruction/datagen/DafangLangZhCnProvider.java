@@ -59,11 +59,13 @@ public class DafangLangZhCnProvider extends FabricLanguageProvider {
         translationBuilder.add("dafang.tooltip.titles.tags","标签");
         translationBuilder.add("dafang.tooltip.titles.info","简介");
         
-        translationBuilder.add("dafang.tag.rock","岩石");
+        translationBuilder.add("dafang.tag.rock","石材");
         translationBuilder.add("dafang.tag.wool","羊毛");
         translationBuilder.add("dafang.tag.wood","木材");
         translationBuilder.add("dafang.tag.metal","金属");
         translationBuilder.add("dafang.tag.raw","母岩");
+        translationBuilder.add("dafang.tag.matte","哑光");
+        translationBuilder.add("dafang.tag.polished","磨制/抛光");
         translationBuilder.add("dafang.tag.vertical","垂直纹理");
         translationBuilder.add("dafang.tag.horizontal","水平纹理");
         translationBuilder.add("dafang.tag.random","随机纹理");
@@ -71,6 +73,5 @@ public class DafangLangZhCnProvider extends FabricLanguageProvider {
         translationBuilder.add("dafang.tag.x1_5","1.5x比例");
         translationBuilder.add("dafang.tag.x2","2x比例");
         translationBuilder.add("dafang.tag.cross","砖纹");
-
     }
 }
