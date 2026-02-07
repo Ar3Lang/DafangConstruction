@@ -22,8 +22,12 @@ public class DafangFusionModelProvider extends FusionModelProvider {
         addBaseModel(DafangBlocks.GRANITE_YELLOWRUST_BRICK_1);
         addBaseModel(DafangBlocks.GRANITE_YELLOWRUST_BRICK_2);
         addBaseModel(DafangBlocks.GRANITE_YELLOWRUST_BRICK_3);
-        addBaseModel(DafangBlocks.GRANITE_YELLOWRUST_BRICK_4);
-        addBaseModel(DafangBlocks.GRANITE_YELLOWRUST_BRICK_5);
+        addBaseModel(DafangBlocks.GRANITE_YELLOWRUST_BRICK_4,
+            new Identifier(DafangConstruction.MOD_ID,"block/rotated_block_all"),
+            new Identifier(DafangConstruction.MOD_ID, "block/" + Registries.BLOCK.getId(DafangBlocks.GRANITE_YELLOWRUST_BRICK_2).getPath()));
+        addBaseModel(DafangBlocks.GRANITE_YELLOWRUST_BRICK_5,
+            new Identifier(DafangConstruction.MOD_ID,"block/rotated_block_all"),
+            new Identifier(DafangConstruction.MOD_ID, "block/" + Registries.BLOCK.getId(DafangBlocks.GRANITE_YELLOWRUST_BRICK_3).getPath()));
         addBaseModel(DafangBlocks.GRANITE_YELLOWRUST_MATTE);
         addBaseModel(DafangBlocks.GRANITE_YELLOWRUST_POLISHED);
         addBaseModel(DafangBlocks.GRANITE_YELLOWRUST_TILES);
@@ -32,8 +36,12 @@ public class DafangFusionModelProvider extends FusionModelProvider {
         addBaseModel(DafangBlocks.GRANITE_RED_BRICK_1);
         addBaseModel(DafangBlocks.GRANITE_RED_BRICK_2);
         addBaseModel(DafangBlocks.GRANITE_RED_BRICK_3);
-        addBaseModel(DafangBlocks.GRANITE_RED_BRICK_4);
-        addBaseModel(DafangBlocks.GRANITE_RED_BRICK_5);
+        addBaseModel(DafangBlocks.GRANITE_RED_BRICK_4,
+            new Identifier(DafangConstruction.MOD_ID,"block/rotated_block_all"),
+            new Identifier(DafangConstruction.MOD_ID, "block/" + Registries.BLOCK.getId(DafangBlocks.GRANITE_RED_BRICK_2).getPath()));
+        addBaseModel(DafangBlocks.GRANITE_RED_BRICK_5,
+            new Identifier(DafangConstruction.MOD_ID,"block/rotated_block_all"),
+            new Identifier(DafangConstruction.MOD_ID, "block/" + Registries.BLOCK.getId(DafangBlocks.GRANITE_RED_BRICK_3).getPath()));
         addBaseModel(DafangBlocks.GRANITE_RED_MATTE);
         addBaseModel(DafangBlocks.GRANITE_RED_POLISHED);
         addBaseModel(DafangBlocks.GRANITE_RED_TILES);
@@ -42,8 +50,12 @@ public class DafangFusionModelProvider extends FusionModelProvider {
         addBaseModel(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_1);
         addBaseModel(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_2);
         addBaseModel(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_3);
-        addBaseModel(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_4);
-        addBaseModel(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_5);
+        addBaseModel(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_4,
+            new Identifier(DafangConstruction.MOD_ID,"block/rotated_block_all"),
+            new Identifier(DafangConstruction.MOD_ID, "block/" + Registries.BLOCK.getId(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_2).getPath()));
+        addBaseModel(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_5,
+            new Identifier(DafangConstruction.MOD_ID,"block/rotated_block_all"),
+            new Identifier(DafangConstruction.MOD_ID, "block/" + Registries.BLOCK.getId(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_3).getPath()));
         addBaseModel(DafangBlocks.GRANITE_GALAXYGRAY_MATTE);
         addBaseModel(DafangBlocks.GRANITE_GALAXYGRAY_POLISHED);
         addBaseModel(DafangBlocks.GRANITE_GALAXYGRAY_TILES);
@@ -52,8 +64,12 @@ public class DafangFusionModelProvider extends FusionModelProvider {
         addBaseModel(DafangBlocks.GRANITE_GRAY_BRICK_1);
         addBaseModel(DafangBlocks.GRANITE_GRAY_BRICK_2);
         addBaseModel(DafangBlocks.GRANITE_GRAY_BRICK_3);
-        addBaseModel(DafangBlocks.GRANITE_GRAY_BRICK_4);
-        addBaseModel(DafangBlocks.GRANITE_GRAY_BRICK_5);
+        addBaseModel(DafangBlocks.GRANITE_GRAY_BRICK_4,
+            new Identifier(DafangConstruction.MOD_ID,"block/rotated_block_all"),
+            new Identifier(DafangConstruction.MOD_ID, "block/" + Registries.BLOCK.getId(DafangBlocks.GRANITE_GRAY_BRICK_2).getPath()));
+        addBaseModel(DafangBlocks.GRANITE_GRAY_BRICK_5,
+            new Identifier(DafangConstruction.MOD_ID,"block/rotated_block_all"),
+            new Identifier(DafangConstruction.MOD_ID, "block/" + Registries.BLOCK.getId(DafangBlocks.GRANITE_GRAY_BRICK_3).getPath()));
         addBaseModel(DafangBlocks.GRANITE_GRAY_MATTE);
         addBaseModel(DafangBlocks.GRANITE_GRAY_POLISHED);
         addBaseModel(DafangBlocks.GRANITE_GRAY_TILES);
@@ -64,6 +80,15 @@ public class DafangFusionModelProvider extends FusionModelProvider {
         var baseData = BaseModelDataBuilder.builder()
             .parent(new Identifier("minecraft","block/cube_all"))
             .texture("all",id)
+            .build();
+        var baseInstance = ModelInstance.of(DefaultModelTypes.BASE, baseData);
+        super.addModel(id,
+            baseInstance);
+    }    private void addBaseModel(Block block, Identifier modelParent, Identifier texture){
+        Identifier id = new Identifier(DafangConstruction.MOD_ID,"block/"+Registries.BLOCK.getId(block).getPath());
+        var baseData = BaseModelDataBuilder.builder()
+            .parent(modelParent)
+            .texture("all",texture)
             .build();
         var baseInstance = ModelInstance.of(DefaultModelTypes.BASE, baseData);
         super.addModel(id,

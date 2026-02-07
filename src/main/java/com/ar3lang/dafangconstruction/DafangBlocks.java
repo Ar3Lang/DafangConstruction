@@ -1,8 +1,10 @@
 package com.ar3lang.dafangconstruction;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.SlabBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -33,8 +35,9 @@ public class DafangBlocks {
 
     //# 石头类注册
     //## 黄锈石
-    public static final Block GRANITE_YELLOWRUST = register("granite_yellowrust",new Block(FabricBlockSettings.copy(net.minecraft.block.Blocks.STONE)),new DafangTags[]{DafangTags.ROCK,DafangTags.RAW},true);
-    public static final Block GRANITE_YELLOWRUST_BRICK_1 = register("granite_yellowrust_brick1",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.CROSS,DafangTags.x2});
+    public static final Block GRANITE_YELLOWRUST = register("granite_yellowrust",new Block(AbstractBlock.Settings.copy(Blocks.STONE)),new DafangTags[]{DafangTags.ROCK,DafangTags.RAW},true);
+    public static final Block GRANITE_YELLOWRUST_SLAB = register("granite_yellowrust_slab",new SlabBlock(AbstractBlock.Settings.copy(Blocks.STONE)),new DafangTags[]{DafangTags.ROCK,DafangTags.RAW},true);
+    public static final Block GRANITE_YELLOWRUST_BRICK_1 = register("granite_yellowrust_brick1",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS).requiresTool()),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.CROSS,DafangTags.x2});
     public static final Block GRANITE_YELLOWRUST_BRICK_2 = register("granite_yellowrust_brick2",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.HORIZONTAL,DafangTags.x2});
     public static final Block GRANITE_YELLOWRUST_BRICK_3 = register("granite_yellowrust_brick3",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.HORIZONTAL,DafangTags.x1_5});
     public static final Block GRANITE_YELLOWRUST_BRICK_4 = register("granite_yellowrust_brick4",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.VERTICAL,DafangTags.x2});

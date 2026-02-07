@@ -1,0 +1,22 @@
+{
+  "loader": "fusion:model",
+  "type": "base",
+  "parent": "block/block",
+  "textures": {
+    "particle": "#all"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "down": {"texture": "#all", "uv": [0, 0, 16, 16], "rotation": 90},
+        "up": {"texture": "#all", "uv": [0, 0, 16, 16], "rotation": 90},
+        "north": {"texture": "#all", "uv": [0, 0, 16, 16], "rotation": 90},
+        "south": {"texture": "#all", "uv": [0, 0, 16, 16], "rotation": 90},
+        "west": {"texture": "#all", "uv": [0, 0, 16, 16], "rotation": 90},
+        "east": {"texture": "#all", "uv": [0, 0, 16, 16], "rotation": 90}
+      }
+    }
+  ]
+}
