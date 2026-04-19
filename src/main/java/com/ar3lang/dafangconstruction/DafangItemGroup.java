@@ -25,6 +25,7 @@ public class DafangItemGroup {
         );
         ItemGroupEvents.modifyEntriesEvent(DAFANG_ITEMGROUP).register((entries) -> {
             entries.add(GRANITE_YELLOWRUST);
+            entries.add(GRANITE_YELLOWRUST_SLAB);
             entries.add(GRANITE_YELLOWRUST_BRICK_1);
             entries.add(GRANITE_YELLOWRUST_BRICK_2);
             entries.add(GRANITE_YELLOWRUST_BRICK_3);

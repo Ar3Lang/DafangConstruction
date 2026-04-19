@@ -36,7 +36,7 @@ public class DafangBlocks {
     //# 石头类注册
     //## 黄锈石
     public static final Block GRANITE_YELLOWRUST = register("granite_yellowrust",new Block(AbstractBlock.Settings.copy(Blocks.STONE)),new DafangTags[]{DafangTags.ROCK,DafangTags.RAW},true);
-    public static final Block GRANITE_YELLOWRUST_SLAB = register("granite_yellowrust_slab",new SlabBlock(AbstractBlock.Settings.copy(Blocks.STONE)),new DafangTags[]{DafangTags.ROCK,DafangTags.RAW},true);
+    public static final Block GRANITE_YELLOWRUST_SLAB = register("granite_yellowrust_slab",new SlabBlock(AbstractBlock.Settings.copy(GRANITE_YELLOWRUST)),new DafangTags[]{DafangTags.ROCK,DafangTags.RAW},true);
     public static final Block GRANITE_YELLOWRUST_BRICK_1 = register("granite_yellowrust_brick1",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS).requiresTool()),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.CROSS,DafangTags.x2});
     public static final Block GRANITE_YELLOWRUST_BRICK_2 = register("granite_yellowrust_brick2",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.HORIZONTAL,DafangTags.x2});
     public static final Block GRANITE_YELLOWRUST_BRICK_3 = register("granite_yellowrust_brick3",new Block(FabricBlockSettings.copy(Blocks.STONE_BRICKS)),new DafangTags[]{DafangTags.ROCK,DafangTags.FIRE,DafangTags.HORIZONTAL,DafangTags.x1_5});

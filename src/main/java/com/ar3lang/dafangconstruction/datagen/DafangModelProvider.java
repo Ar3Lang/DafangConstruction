@@ -5,6 +5,8 @@ import com.ar3lang.dafangconstruction.DafangConstruction;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.enums.SlabType;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.BlockStateVariant;
 import net.minecraft.data.client.BlockStateVariantMap;
@@ -28,6 +30,7 @@ public class DafangModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         // Yellow Rust Granite
         registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST);
+        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST, DafangBlocks.GRANITE_YELLOWRUST_SLAB);
         registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK_1);
         registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK_2);
         registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK_3);
@@ -89,9 +92,27 @@ public class DafangModelProvider extends FabricModelProvider {
                     .put(VariantSettings.MODEL, modelId)
             )
         );
-
         // 注意：这里不注册 item 模型，因为 generateItemModels 是空方法
         // 如果需要 item 模型指向同一个 block 模型，可以在这里额外处理
+    }
+    private void registerFusionSlabBlockState(BlockStateModelGenerator generator, Block baseBlock, Block slabBlock) {
+        Identifier baseId = Registries.BLOCK.getId(baseBlock);
+        Identifier slabId = Registries.BLOCK.getId(slabBlock);
+
+        // 定义三种状态对应的模型路径（指向 Fusion 动态生成的模型）
+        Identifier bottomModelId = new Identifier(DafangConstruction.MOD_ID, "block/" + slabId.getPath());
+        Identifier topModelId = new Identifier(DafangConstruction.MOD_ID, "block/" + slabId.getPath() + "_top");
+        Identifier doubleModelId = new Identifier(DafangConstruction.MOD_ID, "block/" + baseId.getPath());
+
+        // 注册 BlockState 映射
+        generator.blockStateCollector.accept(
+            VariantsBlockStateSupplier.create(slabBlock)
+                .coordinate(BlockStateVariantMap.create(SlabBlock.TYPE)
+                    .register(SlabType.BOTTOM, BlockStateVariant.create().put(VariantSettings.MODEL, bottomModelId))
+                    .register(SlabType.TOP, BlockStateVariant.create().put(VariantSettings.MODEL, topModelId))
+                    .register(SlabType.DOUBLE, BlockStateVariant.create().put(VariantSettings.MODEL, doubleModelId))
+                )
+        );
     }
 
     @Override
