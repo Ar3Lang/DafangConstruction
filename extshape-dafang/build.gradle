@@ -1,0 +1,25 @@
+archivesBaseName = "dafangconstruction-extshape"
+version = rootProject.version
+group = rootProject.group
+
+dependencies {
+  // 依赖主项目（必须）
+  implementation project(':')
+
+  // 子模块自己的额外依赖可以写在这里
+}
+
+processResources {
+  inputs.property "version", project.version
+  filesMatching("fabric.mod.json") {
+    expand "version": project.version
+  }
+}
+
+tasks.withType(JavaCompile).configureEach {
+  it.options.release = 17
+}
+
+jar {
+  archiveClassifier.set("extshape")
+}

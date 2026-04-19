@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "extshape-dafang",
+  "version": "${version}",
+  "name": "ExtShape Dafang Addon",
+  "description": "ExtShape compatibility for Dafang Construction",
+  "authors": ["YourName"],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/extshape-dafang/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.ar3lang.extshapedafang.ExtShapeDafang"
+    ],
+    "client": [
+      "com.ar3lang.extshapedafang.ExtShapeDafangClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*",
+    "dafangconstruction": "*"
+  }
+}
