@@ -35,8 +35,8 @@ public class DafangLangEnUsProvider extends FabricLanguageProvider {
 
         translationBuilder.add(DafangBlocks.GRANITE_GALAXYGRAY,"Galaxy Gray Granite");
         translationBuilder.add("dafang.tooltip.granite_galaxygray","  Galaxy Gray is a type of dark granite; a marble shares the same name.\\n  Galaxy Gray has a relatively smooth texture and is commonly used for polished slab surfaces in public buildings.");
-        translationBuilder.add(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_1,"Galaxy Gray Granite Large Brick (Staggered)");
-        translationBuilder.add(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_2,"Galaxy Gray Granite Large Brick (x2)");
+        translationBuilder.add(DafangBlocks.GRANITE_GALAXYGRAY_BRICK1,"Galaxy Gray Granite Large Brick (Staggered)");
+        translationBuilder.add(DafangBlocks.GRANITE_GALAXYGRAY_BRICK2,"Galaxy Gray Granite Large Brick (x2)");
         translationBuilder.add(DafangBlocks.GRANITE_GALAXYGRAY_BRICK3,"Galaxy Gray Granite Large Brick (x1.5)");
         translationBuilder.add(DafangBlocks.GRANITE_GALAXYGRAY_BRICK4,"Galaxy Gray Granite Large Brick (Vertical Grain x2)");
         translationBuilder.add(DafangBlocks.GRANITE_GALAXYGRAY_BRICK5,"Galaxy Gray Granite Large Brick (Vertical Grain x1.5)");

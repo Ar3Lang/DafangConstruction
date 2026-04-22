@@ -32,8 +32,8 @@ public class DafangLootTablesProvider extends FabricBlockLootTableProvider {
         addDrop(DafangBlocks.GRANITE_RED_TILES);
 
         addDrop(DafangBlocks.GRANITE_GALAXYGRAY);
-        addDrop(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_1);
-        addDrop(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_2);
+        addDrop(DafangBlocks.GRANITE_GALAXYGRAY_BRICK1);
+        addDrop(DafangBlocks.GRANITE_GALAXYGRAY_BRICK2);
         addDrop(DafangBlocks.GRANITE_GALAXYGRAY_BRICK3);
         addDrop(DafangBlocks.GRANITE_GALAXYGRAY_BRICK4);
         addDrop(DafangBlocks.GRANITE_GALAXYGRAY_BRICK5);

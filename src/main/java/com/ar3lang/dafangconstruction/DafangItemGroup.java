@@ -25,7 +25,6 @@ public class DafangItemGroup {
         );
         ItemGroupEvents.modifyEntriesEvent(DAFANG_ITEMGROUP).register((entries) -> {
             entries.add(GRANITE_YELLOWRUST);
-            entries.add(GRANITE_YELLOWRUST_SLAB);
             entries.add(GRANITE_YELLOWRUST_BRICK1);
             entries.add(GRANITE_YELLOWRUST_BRICK2);
             entries.add(GRANITE_YELLOWRUST_BRICK3);
@@ -34,6 +33,33 @@ public class DafangItemGroup {
             entries.add(GRANITE_YELLOWRUST_POLISHED);
             entries.add(GRANITE_YELLOWRUST_MATTE);
             entries.add(GRANITE_YELLOWRUST_TILES);
+            entries.add(GRANITE_YELLOWRUST_SLAB);
+            entries.add(GRANITE_YELLOWRUST_BRICK1_SLAB);
+            entries.add(GRANITE_YELLOWRUST_BRICK2_SLAB);
+            entries.add(GRANITE_YELLOWRUST_BRICK3_SLAB);
+            entries.add(GRANITE_YELLOWRUST_BRICK4_SLAB);
+            entries.add(GRANITE_YELLOWRUST_BRICK5_SLAB);
+            entries.add(GRANITE_YELLOWRUST_POLISHED_SLAB);
+            entries.add(GRANITE_YELLOWRUST_MATTE_SLAB);
+            entries.add(GRANITE_YELLOWRUST_TILES_SLAB);
+            entries.add(GRANITE_YELLOWRUST_STAIRS);
+            entries.add(GRANITE_YELLOWRUST_BRICK1_STAIRS);
+            entries.add(GRANITE_YELLOWRUST_BRICK2_STAIRS);
+            entries.add(GRANITE_YELLOWRUST_BRICK3_STAIRS);
+            entries.add(GRANITE_YELLOWRUST_BRICK4_STAIRS);
+            entries.add(GRANITE_YELLOWRUST_BRICK5_STAIRS);
+            entries.add(GRANITE_YELLOWRUST_POLISHED_STAIRS);
+            entries.add(GRANITE_YELLOWRUST_MATTE_STAIRS);
+            entries.add(GRANITE_YELLOWRUST_TILES_STAIRS);
+            entries.add(GRANITE_YELLOWRUST_WALL);
+            entries.add(GRANITE_YELLOWRUST_BRICK1_WALL);
+            entries.add(GRANITE_YELLOWRUST_BRICK2_WALL);
+            entries.add(GRANITE_YELLOWRUST_BRICK3_WALL);
+            entries.add(GRANITE_YELLOWRUST_BRICK4_WALL);
+            entries.add(GRANITE_YELLOWRUST_BRICK5_WALL);
+            entries.add(GRANITE_YELLOWRUST_POLISHED_WALL);
+            entries.add(GRANITE_YELLOWRUST_MATTE_WALL);
+            entries.add(GRANITE_YELLOWRUST_TILES_WALL);
 
             entries.add(GRANITE_RED);
             entries.add(GRANITE_RED_BRICK1);
@@ -46,8 +72,8 @@ public class DafangItemGroup {
             entries.add(GRANITE_RED_TILES);
 
             entries.add(GRANITE_GALAXYGRAY);
-            entries.add(GRANITE_GALAXYGRAY_BRICK_1);
-            entries.add(GRANITE_GALAXYGRAY_BRICK_2);
+            entries.add(GRANITE_GALAXYGRAY_BRICK1);
+            entries.add(GRANITE_GALAXYGRAY_BRICK2);
             entries.add(GRANITE_GALAXYGRAY_BRICK3);
             entries.add(GRANITE_GALAXYGRAY_BRICK4);
             entries.add(GRANITE_GALAXYGRAY_BRICK5);

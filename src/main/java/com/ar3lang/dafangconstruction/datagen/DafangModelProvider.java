@@ -30,8 +30,6 @@ public class DafangModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         // Yellow Rust Granite
         registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST);
-        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST, DafangBlocks.GRANITE_YELLOWRUST_SLAB);
-        System.out.println("成功运行了");
         registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK1);
         registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK2);
         registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK3);
@@ -40,6 +38,33 @@ public class DafangModelProvider extends FabricModelProvider {
         registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_MATTE);
         registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_POLISHED);
         registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_TILES);
+        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST, DafangBlocks.GRANITE_YELLOWRUST_SLAB);
+        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK1, DafangBlocks.GRANITE_YELLOWRUST_BRICK1_SLAB);
+        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK2, DafangBlocks.GRANITE_YELLOWRUST_BRICK2_SLAB);
+        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK3, DafangBlocks.GRANITE_YELLOWRUST_BRICK3_SLAB);
+        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK4, DafangBlocks.GRANITE_YELLOWRUST_BRICK4_SLAB);
+        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK5, DafangBlocks.GRANITE_YELLOWRUST_BRICK5_SLAB);
+        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_MATTE, DafangBlocks.GRANITE_YELLOWRUST_MATTE_SLAB);
+        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_POLISHED, DafangBlocks.GRANITE_YELLOWRUST_POLISHED_SLAB);
+        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_TILES, DafangBlocks.GRANITE_YELLOWRUST_TILES_SLAB);
+        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_STAIRS);
+        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK1_STAIRS);
+        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK2_STAIRS);
+        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK3_STAIRS);
+        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK4_STAIRS);
+        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK5_STAIRS);
+        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_MATTE_STAIRS);
+        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_POLISHED_STAIRS);
+        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_TILES_STAIRS);
+        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_WALL);
+        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK1_WALL);
+        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK2_WALL);
+        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK3_WALL);
+        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK4_WALL);
+        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK5_WALL);
+        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_MATTE_WALL);
+        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_POLISHED_WALL);
+        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_TILES_WALL);
 
         // Red Granite
         registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_RED);
@@ -54,8 +79,8 @@ public class DafangModelProvider extends FabricModelProvider {
 
         // Galaxy Gray Granite
         registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY_BRICK_1);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY_BRICK_2);
+        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY_BRICK1);
+        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY_BRICK2);
         registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY_BRICK3);
         registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY_BRICK4);
         registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY_BRICK5);
@@ -100,12 +125,10 @@ public class DafangModelProvider extends FabricModelProvider {
         Identifier baseId = Registries.BLOCK.getId(baseBlock);
         Identifier slabId = Registries.BLOCK.getId(slabBlock);
 
-        // 定义三种状态对应的模型路径（指向 Fusion 动态生成的模型）
         Identifier bottomModelId = new Identifier(DafangConstruction.MOD_ID, "block/" + slabId.getPath());
         Identifier topModelId = new Identifier(DafangConstruction.MOD_ID, "block/" + slabId.getPath() + "_top");
         Identifier doubleModelId = new Identifier(DafangConstruction.MOD_ID, "block/" + baseId.getPath());
 
-        // 注册 BlockState 映射
         generator.blockStateCollector.accept(
             VariantsBlockStateSupplier.create(slabBlock)
                 .coordinate(BlockStateVariantMap.create(SlabBlock.TYPE)
@@ -116,6 +139,29 @@ public class DafangModelProvider extends FabricModelProvider {
         );
     }
 
+    private void registerFusionStairs(BlockStateModelGenerator generator, Block stairs) {
+        String path = Registries.BLOCK.getId(stairs).getPath();
+
+        Identifier main = new Identifier(DafangConstruction.MOD_ID, "block/" + path);
+        Identifier inner = new Identifier(DafangConstruction.MOD_ID, "block/" + path + "_inner");
+        Identifier outer = new Identifier(DafangConstruction.MOD_ID, "block/" + path + "_outer");
+
+        generator.blockStateCollector.accept(
+            BlockStateModelGenerator.createStairsBlockState(stairs, inner, main, outer)
+        );
+    }
+
+    private void registerFusionWall(BlockStateModelGenerator generator, Block wall) {
+        String path = Registries.BLOCK.getId(wall).getPath();
+
+        Identifier post = new Identifier(DafangConstruction.MOD_ID, "block/" + path + "_post");
+        Identifier side = new Identifier(DafangConstruction.MOD_ID, "block/" + path + "_side");
+        Identifier sideTall = new Identifier(DafangConstruction.MOD_ID, "block/" + path + "_side_tall");
+
+        generator.blockStateCollector.accept(
+            BlockStateModelGenerator.createWallBlockState(wall, post, side, sideTall)
+        );
+    }
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         // 物品模型留空，或后续手动添加

@@ -35,8 +35,8 @@ public class DafangLangZhCnProvider extends FabricLanguageProvider {
 
         translationBuilder.add(DafangBlocks.GRANITE_GALAXYGRAY,"银河灰花岗岩");
         translationBuilder.add("dafang.tooltip.granite_galaxygray","  银河灰是一种的深色花岗岩，一种大理石与此同名。\\n  银河灰质感较光滑，常用于公共建筑的光滑面石板。");
-        translationBuilder.add(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_1,"银河灰花岗岩大型砖（交错）");
-        translationBuilder.add(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_2,"银河灰花岗岩大型砖（x2）");
+        translationBuilder.add(DafangBlocks.GRANITE_GALAXYGRAY_BRICK1,"银河灰花岗岩大型砖（交错）");
+        translationBuilder.add(DafangBlocks.GRANITE_GALAXYGRAY_BRICK2,"银河灰花岗岩大型砖（x2）");
         translationBuilder.add(DafangBlocks.GRANITE_GALAXYGRAY_BRICK3,"银河灰花岗岩大型砖（x1.5）");
         translationBuilder.add(DafangBlocks.GRANITE_GALAXYGRAY_BRICK4,"银河灰花岗岩大型砖（竖纹x2）");
         translationBuilder.add(DafangBlocks.GRANITE_GALAXYGRAY_BRICK5,"银河灰花岗岩大型砖（竖纹x1.5）");
