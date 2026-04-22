@@ -55,21 +55,21 @@ public class DafangTextureMetadataProvider extends FusionTextureMetadataProvider
     @Override
     protected void generate() {
         addTextureMetadata(DafangBlocks.GRANITE_YELLOWRUST, EnumType.PATTERN2);
-        addTextureMetadata(DafangBlocks.GRANITE_YELLOWRUST_BRICK_1, EnumType.PATTERN2);
-        addTextureMetadata(DafangBlocks.GRANITE_YELLOWRUST_BRICK_2, EnumType.PATTERN2);
-        addTextureMetadata(DafangBlocks.GRANITE_YELLOWRUST_BRICK_3, EnumType.PATTERN1_5);
-        addTextureMetadata(DafangBlocks.GRANITE_YELLOWRUST_BRICK_4, EnumType.PATTERN2);
-        addTextureMetadata(DafangBlocks.GRANITE_YELLOWRUST_BRICK_5, EnumType.PATTERN2);
+        addTextureMetadata(DafangBlocks.GRANITE_YELLOWRUST_BRICK1, EnumType.PATTERN2);
+        addTextureMetadata(DafangBlocks.GRANITE_YELLOWRUST_BRICK2, EnumType.PATTERN2);
+        addTextureMetadata(DafangBlocks.GRANITE_YELLOWRUST_BRICK3, EnumType.PATTERN1_5);
+        addTextureMetadata(DafangBlocks.GRANITE_YELLOWRUST_BRICK4, EnumType.PATTERN2);
+        addTextureMetadata(DafangBlocks.GRANITE_YELLOWRUST_BRICK5, EnumType.PATTERN2);
         addTextureMetadata(DafangBlocks.GRANITE_YELLOWRUST_MATTE, EnumType.PATTERN2);
         addTextureMetadata(DafangBlocks.GRANITE_YELLOWRUST_POLISHED, EnumType.PATTERN2);
         addTextureMetadata(DafangBlocks.GRANITE_YELLOWRUST_TILES, EnumType.RANDOM3);
         
         addTextureMetadata(DafangBlocks.GRANITE_RED, EnumType.PATTERN2);
-        addTextureMetadata(DafangBlocks.GRANITE_RED_BRICK_1, EnumType.PATTERN2);
-        addTextureMetadata(DafangBlocks.GRANITE_RED_BRICK_2, EnumType.PATTERN2);
-        addTextureMetadata(DafangBlocks.GRANITE_RED_BRICK_3, EnumType.PATTERN1_5);
-        addTextureMetadata(DafangBlocks.GRANITE_RED_BRICK_4, EnumType.PATTERN2);
-        addTextureMetadata(DafangBlocks.GRANITE_RED_BRICK_5, EnumType.PATTERN2);
+        addTextureMetadata(DafangBlocks.GRANITE_RED_BRICK1, EnumType.PATTERN2);
+        addTextureMetadata(DafangBlocks.GRANITE_RED_BRICK2, EnumType.PATTERN2);
+        addTextureMetadata(DafangBlocks.GRANITE_RED_BRICK3, EnumType.PATTERN1_5);
+        addTextureMetadata(DafangBlocks.GRANITE_RED_BRICK4, EnumType.PATTERN2);
+        addTextureMetadata(DafangBlocks.GRANITE_RED_BRICK5, EnumType.PATTERN2);
         addTextureMetadata(DafangBlocks.GRANITE_RED_MATTE, EnumType.PATTERN2);
         addTextureMetadata(DafangBlocks.GRANITE_RED_POLISHED, EnumType.PATTERN2);
         addTextureMetadata(DafangBlocks.GRANITE_RED_TILES, EnumType.RANDOM3);
@@ -77,19 +77,19 @@ public class DafangTextureMetadataProvider extends FusionTextureMetadataProvider
         addTextureMetadata(DafangBlocks.GRANITE_GALAXYGRAY, EnumType.PATTERN2);
         addTextureMetadata(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_1, EnumType.PATTERN2);
         addTextureMetadata(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_2, EnumType.PATTERN2);
-        addTextureMetadata(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_3, EnumType.PATTERN1_5);
-        addTextureMetadata(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_4, EnumType.PATTERN2);
-        addTextureMetadata(DafangBlocks.GRANITE_GALAXYGRAY_BRICK_5, EnumType.PATTERN2);
+        addTextureMetadata(DafangBlocks.GRANITE_GALAXYGRAY_BRICK3, EnumType.PATTERN1_5);
+        addTextureMetadata(DafangBlocks.GRANITE_GALAXYGRAY_BRICK4, EnumType.PATTERN2);
+        addTextureMetadata(DafangBlocks.GRANITE_GALAXYGRAY_BRICK5, EnumType.PATTERN2);
         addTextureMetadata(DafangBlocks.GRANITE_GALAXYGRAY_MATTE, EnumType.PATTERN2);
         addTextureMetadata(DafangBlocks.GRANITE_GALAXYGRAY_POLISHED, EnumType.PATTERN2);
         addTextureMetadata(DafangBlocks.GRANITE_GALAXYGRAY_TILES, EnumType.RANDOM3);
                 
         addTextureMetadata(DafangBlocks.GRANITE_GRAY, EnumType.PATTERN2);
-        addTextureMetadata(DafangBlocks.GRANITE_GRAY_BRICK_1, EnumType.PATTERN2);
+        addTextureMetadata(DafangBlocks.GRANITE_GRAY_BRICK1, EnumType.PATTERN2);
         addTextureMetadata(DafangBlocks.GRANITE_GRAY_BRICK_2, EnumType.PATTERN2);
-        addTextureMetadata(DafangBlocks.GRANITE_GRAY_BRICK_3, EnumType.PATTERN1_5);
-        addTextureMetadata(DafangBlocks.GRANITE_GRAY_BRICK_4, EnumType.PATTERN2);
-        addTextureMetadata(DafangBlocks.GRANITE_GRAY_BRICK_5, EnumType.PATTERN2);
+        addTextureMetadata(DafangBlocks.GRANITE_GRAY_BRICK3, EnumType.PATTERN1_5);
+        addTextureMetadata(DafangBlocks.GRANITE_GRAY_BRICK4, EnumType.PATTERN2);
+        addTextureMetadata(DafangBlocks.GRANITE_GRAY_BRICK5, EnumType.PATTERN2);
         addTextureMetadata(DafangBlocks.GRANITE_GRAY_MATTE, EnumType.PATTERN2);
         addTextureMetadata(DafangBlocks.GRANITE_GRAY_POLISHED, EnumType.PATTERN2);
         addTextureMetadata(DafangBlocks.GRANITE_GRAY_TILES, EnumType.RANDOM3);

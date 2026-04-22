@@ -26,21 +26,21 @@ public class DafangItemGroup {
         ItemGroupEvents.modifyEntriesEvent(DAFANG_ITEMGROUP).register((entries) -> {
             entries.add(GRANITE_YELLOWRUST);
             entries.add(GRANITE_YELLOWRUST_SLAB);
-            entries.add(GRANITE_YELLOWRUST_BRICK_1);
-            entries.add(GRANITE_YELLOWRUST_BRICK_2);
-            entries.add(GRANITE_YELLOWRUST_BRICK_3);
-            entries.add(GRANITE_YELLOWRUST_BRICK_4);
-            entries.add(GRANITE_YELLOWRUST_BRICK_5);
+            entries.add(GRANITE_YELLOWRUST_BRICK1);
+            entries.add(GRANITE_YELLOWRUST_BRICK2);
+            entries.add(GRANITE_YELLOWRUST_BRICK3);
+            entries.add(GRANITE_YELLOWRUST_BRICK4);
+            entries.add(GRANITE_YELLOWRUST_BRICK5);
             entries.add(GRANITE_YELLOWRUST_POLISHED);
             entries.add(GRANITE_YELLOWRUST_MATTE);
             entries.add(GRANITE_YELLOWRUST_TILES);
 
             entries.add(GRANITE_RED);
-            entries.add(GRANITE_RED_BRICK_1);
-            entries.add(GRANITE_RED_BRICK_2);
-            entries.add(GRANITE_RED_BRICK_3);
-            entries.add(GRANITE_RED_BRICK_4);
-            entries.add(GRANITE_RED_BRICK_5);
+            entries.add(GRANITE_RED_BRICK1);
+            entries.add(GRANITE_RED_BRICK2);
+            entries.add(GRANITE_RED_BRICK3);
+            entries.add(GRANITE_RED_BRICK4);
+            entries.add(GRANITE_RED_BRICK5);
             entries.add(GRANITE_RED_POLISHED);
             entries.add(GRANITE_RED_MATTE);
             entries.add(GRANITE_RED_TILES);
@@ -48,19 +48,19 @@ public class DafangItemGroup {
             entries.add(GRANITE_GALAXYGRAY);
             entries.add(GRANITE_GALAXYGRAY_BRICK_1);
             entries.add(GRANITE_GALAXYGRAY_BRICK_2);
-            entries.add(GRANITE_GALAXYGRAY_BRICK_3);
-            entries.add(GRANITE_GALAXYGRAY_BRICK_4);
-            entries.add(GRANITE_GALAXYGRAY_BRICK_5);
+            entries.add(GRANITE_GALAXYGRAY_BRICK3);
+            entries.add(GRANITE_GALAXYGRAY_BRICK4);
+            entries.add(GRANITE_GALAXYGRAY_BRICK5);
             entries.add(GRANITE_GALAXYGRAY_POLISHED);
             entries.add(GRANITE_GALAXYGRAY_MATTE);
             entries.add(GRANITE_GALAXYGRAY_TILES);
 
             entries.add(GRANITE_GRAY);
-            entries.add(GRANITE_GRAY_BRICK_1);
+            entries.add(GRANITE_GRAY_BRICK1);
             entries.add(GRANITE_GRAY_BRICK_2);
-            entries.add(GRANITE_GRAY_BRICK_3);
-            entries.add(GRANITE_GRAY_BRICK_4);
-            entries.add(GRANITE_GRAY_BRICK_5);
+            entries.add(GRANITE_GRAY_BRICK3);
+            entries.add(GRANITE_GRAY_BRICK4);
+            entries.add(GRANITE_GRAY_BRICK5);
             entries.add(GRANITE_GRAY_POLISHED);
             entries.add(GRANITE_GRAY_MATTE);
             entries.add(GRANITE_GRAY_TILES);
