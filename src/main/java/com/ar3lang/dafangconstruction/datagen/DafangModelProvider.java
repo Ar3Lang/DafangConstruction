@@ -1,20 +1,18 @@
 package com.ar3lang.dafangconstruction.datagen;
 
-import com.ar3lang.dafangconstruction.DafangBlocks;
 import com.ar3lang.dafangconstruction.DafangConstruction;
+import com.ar3lang.dafangconstruction.block.DafangBlockFamily;
+import com.ar3lang.dafangconstruction.block.DafangBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.enums.SlabType;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.BlockStateVariant;
-import net.minecraft.data.client.BlockStateVariantMap;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.VariantSettings;
-import net.minecraft.data.client.VariantsBlockStateSupplier;
+import net.minecraft.data.client.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
+
+import java.util.Optional;
 
 public class DafangModelProvider extends FabricModelProvider {
 
@@ -22,149 +20,98 @@ public class DafangModelProvider extends FabricModelProvider {
         super(output);
     }
 
-    /**
-     * 只注册 blockstate，不生成模型 JSON。
-     * 模型由 Fusion 通过 texture metadata 动态生成。
-     */
     @Override
-    public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        // Yellow Rust Granite
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK1);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK2);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK3);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK4);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK5);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_MATTE);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_POLISHED);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_TILES);
-        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST, DafangBlocks.GRANITE_YELLOWRUST_SLAB);
-        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK1, DafangBlocks.GRANITE_YELLOWRUST_BRICK1_SLAB);
-        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK2, DafangBlocks.GRANITE_YELLOWRUST_BRICK2_SLAB);
-        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK3, DafangBlocks.GRANITE_YELLOWRUST_BRICK3_SLAB);
-        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK4, DafangBlocks.GRANITE_YELLOWRUST_BRICK4_SLAB);
-        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK5, DafangBlocks.GRANITE_YELLOWRUST_BRICK5_SLAB);
-        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_MATTE, DafangBlocks.GRANITE_YELLOWRUST_MATTE_SLAB);
-        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_POLISHED, DafangBlocks.GRANITE_YELLOWRUST_POLISHED_SLAB);
-        registerFusionSlabBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_TILES, DafangBlocks.GRANITE_YELLOWRUST_TILES_SLAB);
-        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_STAIRS);
-        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK1_STAIRS);
-        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK2_STAIRS);
-        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK3_STAIRS);
-        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK4_STAIRS);
-        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK5_STAIRS);
-        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_MATTE_STAIRS);
-        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_POLISHED_STAIRS);
-        registerFusionStairs(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_TILES_STAIRS);
-        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_WALL);
-        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK1_WALL);
-        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK2_WALL);
-        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK3_WALL);
-        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK4_WALL);
-        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_BRICK5_WALL);
-        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_MATTE_WALL);
-        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_POLISHED_WALL);
-        registerFusionWall(blockStateModelGenerator, DafangBlocks.GRANITE_YELLOWRUST_TILES_WALL);
+    public void generateBlockStateModels(BlockStateModelGenerator generator) {
+        for (DafangBlockFamily family : DafangBlocks.getAllFamilies()) {
+            //分类
+            //石头
+//            if(family.getId().startsWith("granite")||family.getId().startsWith("cement")||family.getId().startsWith("marble")||family.getId().startsWith("dafang_modern")||family.getId().startsWith("dafang_smoothstone"))
+//            {
+//               registerFusionBlockState(generator, family.getBase(), "stone");
+//            } else if (family.getId().startsWith("carpet")||family.getId().startsWith("fabric"))
+//            {
+//                registerFusionBlockState(generator, family.getBase(), "cloth");
+//            }
+//            else
+                if (family.getBase() != null)
+                {
+                    registerFusionBlockState(generator, family.getBase());
+                    registerFusionSlabBlockState(generator, family.getBase(), family.getSlab());
+                    registerFusionStairs(generator, family.getStairs());
+                    registerFusionWall(generator, family.getWall());
+                }
 
-        // Red Granite
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_RED);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_RED_BRICK1);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_RED_BRICK2);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_RED_BRICK3);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_RED_BRICK4);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_RED_BRICK5);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_RED_MATTE);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_RED_POLISHED);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_RED_TILES);
-
-        // Galaxy Gray Granite
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY_BRICK1);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY_BRICK2);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY_BRICK3);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY_BRICK4);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY_BRICK5);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY_MATTE);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY_POLISHED);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GALAXYGRAY_TILES);
-
-        // Gray Granite
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GRAY);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GRAY_BRICK1);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GRAY_BRICK_2);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GRAY_BRICK3);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GRAY_BRICK4);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GRAY_BRICK5);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GRAY_MATTE);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GRAY_POLISHED);
-        registerFusionBlockState(blockStateModelGenerator, DafangBlocks.GRANITE_GRAY_TILES);
+        }
     }
 
-    /**
-     * 注册 blockstate，让模型指向 Fusion 会处理的纹理路径。
-     * 不生成模型 JSON，模型由 Fusion 动态生成。
-     */
+    @Override
+    public void generateItemModels(ItemModelGenerator generator) {
+        for (DafangBlockFamily family : DafangBlocks.getAllFamilies()) {
+            // 只有墙需要特殊处理 item 模型（根据你的原有代码逻辑）
+            if (family.getWall() != null) {
+                registerWallItemModel(generator, family.getWall());
+            }
+        }
+    }
+
+    // --- 以下是辅助方法，保持你的 Fusion 逻辑不变 ---
+
     private void registerFusionBlockState(BlockStateModelGenerator generator, Block block) {
         Identifier blockId = Registries.BLOCK.getId(block);
-        // 模型 ID 指向 textures/block 下的纹理（去掉 .png 扩展名）
-        // Fusion 会根据 textures/block/[path].png.mcmeta 动态处理
         Identifier modelId = new Identifier(DafangConstruction.MOD_ID, "block/" + blockId.getPath());
-
-        // 只注册 blockstate，不注册模型（不调用 modelCollector）
         generator.blockStateCollector.accept(
-            VariantsBlockStateSupplier.create(
-                block,
-                BlockStateVariant.create()
-                    .put(VariantSettings.MODEL, modelId)
-            )
+            VariantsBlockStateSupplier.create(block, BlockStateVariant.create().put(VariantSettings.MODEL, modelId))
         );
-        // 注意：这里不注册 item 模型，因为 generateItemModels 是空方法
-        // 如果需要 item 模型指向同一个 block 模型，可以在这里额外处理
     }
-    private void registerFusionSlabBlockState(BlockStateModelGenerator generator, Block baseBlock, Block slabBlock) {
-        Identifier baseId = Registries.BLOCK.getId(baseBlock);
-        Identifier slabId = Registries.BLOCK.getId(slabBlock);
+    private void registerFusionBlockState(BlockStateModelGenerator generator, Block block, String catograph) {
+        Identifier blockId = Registries.BLOCK.getId(block);
+        Identifier modelId = new Identifier(
+            DafangConstruction.MOD_ID,
+            "block/" + catograph + "/" + blockId.getPath()
+        );
+        generator.blockStateCollector.accept(
+            VariantsBlockStateSupplier.create(block, BlockStateVariant.create().put(VariantSettings.MODEL, modelId))
+        );
+    }
 
-        Identifier bottomModelId = new Identifier(DafangConstruction.MOD_ID, "block/" + slabId.getPath());
-        Identifier topModelId = new Identifier(DafangConstruction.MOD_ID, "block/" + slabId.getPath() + "_top");
-        Identifier doubleModelId = new Identifier(DafangConstruction.MOD_ID, "block/" + baseId.getPath());
+
+    private void registerFusionSlabBlockState(BlockStateModelGenerator generator, Block baseBlock, Block slabBlock) {
+        Identifier slabId = Registries.BLOCK.getId(slabBlock);
+        Identifier baseId = Registries.BLOCK.getId(baseBlock);
 
         generator.blockStateCollector.accept(
             VariantsBlockStateSupplier.create(slabBlock)
                 .coordinate(BlockStateVariantMap.create(SlabBlock.TYPE)
-                    .register(SlabType.BOTTOM, BlockStateVariant.create().put(VariantSettings.MODEL, bottomModelId))
-                    .register(SlabType.TOP, BlockStateVariant.create().put(VariantSettings.MODEL, topModelId))
-                    .register(SlabType.DOUBLE, BlockStateVariant.create().put(VariantSettings.MODEL, doubleModelId))
+                    .register(SlabType.BOTTOM, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(DafangConstruction.MOD_ID, "block/" + slabId.getPath())))
+                    .register(SlabType.TOP, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(DafangConstruction.MOD_ID, "block/" + slabId.getPath() + "_top")))
+                    .register(SlabType.DOUBLE, BlockStateVariant.create().put(VariantSettings.MODEL, new Identifier(DafangConstruction.MOD_ID, "block/" + baseId.getPath())))
                 )
         );
     }
 
     private void registerFusionStairs(BlockStateModelGenerator generator, Block stairs) {
         String path = Registries.BLOCK.getId(stairs).getPath();
-
-        Identifier main = new Identifier(DafangConstruction.MOD_ID, "block/" + path);
-        Identifier inner = new Identifier(DafangConstruction.MOD_ID, "block/" + path + "_inner");
-        Identifier outer = new Identifier(DafangConstruction.MOD_ID, "block/" + path + "_outer");
-
         generator.blockStateCollector.accept(
-            BlockStateModelGenerator.createStairsBlockState(stairs, inner, main, outer)
+            BlockStateModelGenerator.createStairsBlockState(stairs,
+                new Identifier(DafangConstruction.MOD_ID, "block/" + path + "_inner"),
+                new Identifier(DafangConstruction.MOD_ID, "block/" + path),
+                new Identifier(DafangConstruction.MOD_ID, "block/" + path + "_outer"))
         );
     }
 
     private void registerFusionWall(BlockStateModelGenerator generator, Block wall) {
         String path = Registries.BLOCK.getId(wall).getPath();
-
-        Identifier post = new Identifier(DafangConstruction.MOD_ID, "block/" + path + "_post");
-        Identifier side = new Identifier(DafangConstruction.MOD_ID, "block/" + path + "_side");
-        Identifier sideTall = new Identifier(DafangConstruction.MOD_ID, "block/" + path + "_side_tall");
-
         generator.blockStateCollector.accept(
-            BlockStateModelGenerator.createWallBlockState(wall, post, side, sideTall)
+            BlockStateModelGenerator.createWallBlockState(wall,
+                new Identifier(DafangConstruction.MOD_ID, "block/" + path + "_post"),
+                new Identifier(DafangConstruction.MOD_ID, "block/" + path + "_side"),
+                new Identifier(DafangConstruction.MOD_ID, "block/" + path + "_side_tall"))
         );
     }
-    @Override
-    public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        // 物品模型留空，或后续手动添加
-        // Fusion 的模型在 block 处已经处理，item 通常继承 block 的模型
+
+    private void registerWallItemModel(ItemModelGenerator generator, Block wall) {
+        Identifier wallId = Registries.BLOCK.getId(wall);
+        Identifier inventoryModelId = new Identifier(DafangConstruction.MOD_ID, "block/" + wallId.getPath() + "_inventory");
+        generator.register(wall.asItem(), new Model(Optional.of(inventoryModelId), Optional.empty()));
     }
 }

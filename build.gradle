@@ -17,9 +17,12 @@ repositories {
 	maven { url "https://maven.shedaniel.me/" }
 	maven { url 'https://www.cursemaven.com' }
 	maven { url 'https://maven.minecraftforge.net/' }
+
 }
 
 dependencies {
+  compileOnly 'org.jetbrains:annotations:24.0.0'
+
 
   // To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -45,7 +48,7 @@ dependencies {
   // Fusion
 //  modImplementation "curse.maven:fusion-854949:7471510"
   modCompileOnly "curse.maven:fusion-854949:7471510"
-  modRuntimeOnly "curse.maven:fusion-854949:7471510"
+//  modRuntimeOnly "curse.maven:fusion-854949:7471510"
 
 }
 sourceSets {

@@ -1,8 +1,8 @@
 {
   "type": "fusion:base",
-  "parent": "dafangconstruction:block/rotated_block_all",
+  "parent": "minecraft:block/cube_all",
   "loader": "fusion:model",
   "textures": {
-    "all": "dafangconstruction:block/granite_gray_brick3"
+    "all": "dafangconstruction:block/stone/granite_gray_brick5"
   }
 }

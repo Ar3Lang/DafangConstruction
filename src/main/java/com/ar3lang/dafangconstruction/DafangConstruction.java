@@ -1,5 +1,6 @@
 package com.ar3lang.dafangconstruction;
 
+import com.ar3lang.dafangconstruction.block.DafangBlocks;
 import com.google.common.reflect.Reflection;
 import net.fabricmc.api.ModInitializer;
 
@@ -23,6 +24,7 @@ public class DafangConstruction implements ModInitializer {
         Reflection.initialize(DafangBlocks.class);
         Reflection.initialize(DafangItemGroup.class);
 
+        DafangBlocks.init();
         DafangItemGroup.init();
 
 		LOGGER.info("Hello Fabric world!");

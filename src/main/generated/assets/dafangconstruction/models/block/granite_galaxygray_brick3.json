@@ -3,6 +3,6 @@
   "parent": "minecraft:block/cube_all",
   "loader": "fusion:model",
   "textures": {
-    "all": "dafangconstruction:block/granite_galaxygray_brick3"
+    "all": "dafangconstruction:block/stone/granite_galaxygray_brick3"
   }
 }

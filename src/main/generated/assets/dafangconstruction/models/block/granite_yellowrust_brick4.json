@@ -3,6 +3,6 @@
   "parent": "minecraft:block/cube_all",
   "loader": "fusion:model",
   "textures": {
-    "all": "dafangconstruction:block/granite_yellowrust_brick4"
+    "all": "dafangconstruction:block/stone/granite_yellowrust_brick4"
   }
 }

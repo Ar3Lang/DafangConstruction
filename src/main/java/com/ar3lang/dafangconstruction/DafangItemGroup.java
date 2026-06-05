@@ -1,8 +1,9 @@
 package com.ar3lang.dafangconstruction;
 
+import com.ar3lang.dafangconstruction.block.DafangBlockFamily;
+import com.ar3lang.dafangconstruction.block.DafangBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -12,85 +13,30 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-import static com.ar3lang.dafangconstruction.DafangBlocks.*;
-
 public class DafangItemGroup {
-    public static final RegistryKey<ItemGroup> DAFANG_ITEMGROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(DafangConstruction.MOD_ID, "dafangconstruction"));
+    public static final RegistryKey<ItemGroup> DAFANG_ITEMGROUP = RegistryKey.of(
+        RegistryKeys.ITEM_GROUP,
+        new Identifier(DafangConstruction.MOD_ID, "dafangconstruction")
+    );
 
     public static void init() {
+        // 注册物品栏
         Registry.register(Registries.ITEM_GROUP, DAFANG_ITEMGROUP, FabricItemGroup.builder()
             .displayName(Text.translatable("dafang.itemgroup"))
-            .icon(() -> new ItemStack(Blocks.BRICKS))
+            // 这里可以换一个更通用的图标或者保留原来的逻辑
+            .icon(() -> new ItemStack(DafangBlocks.getFamily("granite_yellowrust").getBase()))
             .build()
         );
+
+        // 动态添加所有 Family 中的内容
         ItemGroupEvents.modifyEntriesEvent(DAFANG_ITEMGROUP).register((entries) -> {
-            entries.add(GRANITE_YELLOWRUST);
-            entries.add(GRANITE_YELLOWRUST_BRICK1);
-            entries.add(GRANITE_YELLOWRUST_BRICK2);
-            entries.add(GRANITE_YELLOWRUST_BRICK3);
-            entries.add(GRANITE_YELLOWRUST_BRICK4);
-            entries.add(GRANITE_YELLOWRUST_BRICK5);
-            entries.add(GRANITE_YELLOWRUST_POLISHED);
-            entries.add(GRANITE_YELLOWRUST_MATTE);
-            entries.add(GRANITE_YELLOWRUST_TILES);
-            entries.add(GRANITE_YELLOWRUST_SLAB);
-            entries.add(GRANITE_YELLOWRUST_BRICK1_SLAB);
-            entries.add(GRANITE_YELLOWRUST_BRICK2_SLAB);
-            entries.add(GRANITE_YELLOWRUST_BRICK3_SLAB);
-            entries.add(GRANITE_YELLOWRUST_BRICK4_SLAB);
-            entries.add(GRANITE_YELLOWRUST_BRICK5_SLAB);
-            entries.add(GRANITE_YELLOWRUST_POLISHED_SLAB);
-            entries.add(GRANITE_YELLOWRUST_MATTE_SLAB);
-            entries.add(GRANITE_YELLOWRUST_TILES_SLAB);
-            entries.add(GRANITE_YELLOWRUST_STAIRS);
-            entries.add(GRANITE_YELLOWRUST_BRICK1_STAIRS);
-            entries.add(GRANITE_YELLOWRUST_BRICK2_STAIRS);
-            entries.add(GRANITE_YELLOWRUST_BRICK3_STAIRS);
-            entries.add(GRANITE_YELLOWRUST_BRICK4_STAIRS);
-            entries.add(GRANITE_YELLOWRUST_BRICK5_STAIRS);
-            entries.add(GRANITE_YELLOWRUST_POLISHED_STAIRS);
-            entries.add(GRANITE_YELLOWRUST_MATTE_STAIRS);
-            entries.add(GRANITE_YELLOWRUST_TILES_STAIRS);
-            entries.add(GRANITE_YELLOWRUST_WALL);
-            entries.add(GRANITE_YELLOWRUST_BRICK1_WALL);
-            entries.add(GRANITE_YELLOWRUST_BRICK2_WALL);
-            entries.add(GRANITE_YELLOWRUST_BRICK3_WALL);
-            entries.add(GRANITE_YELLOWRUST_BRICK4_WALL);
-            entries.add(GRANITE_YELLOWRUST_BRICK5_WALL);
-            entries.add(GRANITE_YELLOWRUST_POLISHED_WALL);
-            entries.add(GRANITE_YELLOWRUST_MATTE_WALL);
-            entries.add(GRANITE_YELLOWRUST_TILES_WALL);
-
-            entries.add(GRANITE_RED);
-            entries.add(GRANITE_RED_BRICK1);
-            entries.add(GRANITE_RED_BRICK2);
-            entries.add(GRANITE_RED_BRICK3);
-            entries.add(GRANITE_RED_BRICK4);
-            entries.add(GRANITE_RED_BRICK5);
-            entries.add(GRANITE_RED_POLISHED);
-            entries.add(GRANITE_RED_MATTE);
-            entries.add(GRANITE_RED_TILES);
-
-            entries.add(GRANITE_GALAXYGRAY);
-            entries.add(GRANITE_GALAXYGRAY_BRICK1);
-            entries.add(GRANITE_GALAXYGRAY_BRICK2);
-            entries.add(GRANITE_GALAXYGRAY_BRICK3);
-            entries.add(GRANITE_GALAXYGRAY_BRICK4);
-            entries.add(GRANITE_GALAXYGRAY_BRICK5);
-            entries.add(GRANITE_GALAXYGRAY_POLISHED);
-            entries.add(GRANITE_GALAXYGRAY_MATTE);
-            entries.add(GRANITE_GALAXYGRAY_TILES);
-
-            entries.add(GRANITE_GRAY);
-            entries.add(GRANITE_GRAY_BRICK1);
-            entries.add(GRANITE_GRAY_BRICK_2);
-            entries.add(GRANITE_GRAY_BRICK3);
-            entries.add(GRANITE_GRAY_BRICK4);
-            entries.add(GRANITE_GRAY_BRICK5);
-            entries.add(GRANITE_GRAY_POLISHED);
-            entries.add(GRANITE_GRAY_MATTE);
-            entries.add(GRANITE_GRAY_TILES);
+            for (DafangBlockFamily family : DafangBlocks.getAllFamilies()) {
+                // 按顺序添加：本体、台阶、楼梯、墙
+                if (family.getBase() != null) entries.add(family.getBase());
+                if (family.getSlab() != null) entries.add(family.getSlab());
+                if (family.getStairs() != null) entries.add(family.getStairs());
+                if (family.getWall() != null) entries.add(family.getWall());
+            }
         });
     }
 }
-

@@ -18,7 +18,13 @@ public enum DafangTags {
     x1("dafang.tag.x1"),
     x1_5("dafang.tag.x1_5"),
     x2("dafang.tag.x2"),
-    CROSS("dafang.tag.cross");
+    CROSS("dafang.tag.cross"),
+    FLAT("dafang.tag.flat"),
+    CEMENT("dafang.tag.cement"),
+    MARBLE("dafang.tag.marble"),
+    GOLD("dafang.tag.gold"),
+    SQUARE("dafang.tag.square"),
+    x4("dafang.tag.x4");
 
     private final String transKey;
     public String getTransKey(){

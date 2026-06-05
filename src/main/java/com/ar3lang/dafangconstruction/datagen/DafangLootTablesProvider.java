@@ -1,8 +1,10 @@
 package com.ar3lang.dafangconstruction.datagen;
 
-import com.ar3lang.dafangconstruction.DafangBlocks;
+import com.ar3lang.dafangconstruction.block.DafangBlockFamily;
+import com.ar3lang.dafangconstruction.block.DafangBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.block.Block;
 
 public class DafangLootTablesProvider extends FabricBlockLootTableProvider {
     public DafangLootTablesProvider(FabricDataOutput dataOutput) {
@@ -11,44 +13,26 @@ public class DafangLootTablesProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        addDrop(DafangBlocks.GRANITE_YELLOWRUST);
-        addDrop(DafangBlocks.GRANITE_YELLOWRUST_BRICK1);
-        addDrop(DafangBlocks.GRANITE_YELLOWRUST_BRICK2);
-        addDrop(DafangBlocks.GRANITE_YELLOWRUST_BRICK3);
-        addDrop(DafangBlocks.GRANITE_YELLOWRUST_BRICK4);
-        addDrop(DafangBlocks.GRANITE_YELLOWRUST_BRICK5);
-        addDrop(DafangBlocks.GRANITE_YELLOWRUST_MATTE);
-        addDrop(DafangBlocks.GRANITE_YELLOWRUST_POLISHED);
-        addDrop(DafangBlocks.GRANITE_YELLOWRUST_TILES);
+        for (DafangBlockFamily family : DafangBlocks.getAllFamilies()) {
+            // 1. 注册基础方块
+            if (family.getBase() != null) {
+                addDrop(family.getBase());
+            }
 
-        addDrop(DafangBlocks.GRANITE_RED);
-        addDrop(DafangBlocks.GRANITE_RED_BRICK1);
-        addDrop(DafangBlocks.GRANITE_RED_BRICK2);
-        addDrop(DafangBlocks.GRANITE_RED_BRICK3);
-        addDrop(DafangBlocks.GRANITE_RED_BRICK4);
-        addDrop(DafangBlocks.GRANITE_RED_BRICK5);
-        addDrop(DafangBlocks.GRANITE_RED_MATTE);
-        addDrop(DafangBlocks.GRANITE_RED_POLISHED);
-        addDrop(DafangBlocks.GRANITE_RED_TILES);
+            // 2. 注册台阶 (使用专门的 slabDrops 方法)
+            if (family.getSlab() != null) {
+                addDrop(family.getSlab(), this.slabDrops(family.getSlab()));
+            }
 
-        addDrop(DafangBlocks.GRANITE_GALAXYGRAY);
-        addDrop(DafangBlocks.GRANITE_GALAXYGRAY_BRICK1);
-        addDrop(DafangBlocks.GRANITE_GALAXYGRAY_BRICK2);
-        addDrop(DafangBlocks.GRANITE_GALAXYGRAY_BRICK3);
-        addDrop(DafangBlocks.GRANITE_GALAXYGRAY_BRICK4);
-        addDrop(DafangBlocks.GRANITE_GALAXYGRAY_BRICK5);
-        addDrop(DafangBlocks.GRANITE_GALAXYGRAY_MATTE);
-        addDrop(DafangBlocks.GRANITE_GALAXYGRAY_POLISHED);
-        addDrop(DafangBlocks.GRANITE_GALAXYGRAY_TILES);
+            // 3. 注册楼梯 (通常直接掉落)
+            if (family.getStairs() != null) {
+                addDrop(family.getStairs());
+            }
 
-        addDrop(DafangBlocks.GRANITE_GRAY);
-        addDrop(DafangBlocks.GRANITE_GRAY_BRICK1);
-        addDrop(DafangBlocks.GRANITE_GRAY_BRICK_2);
-        addDrop(DafangBlocks.GRANITE_GRAY_BRICK3);
-        addDrop(DafangBlocks.GRANITE_GRAY_BRICK4);
-        addDrop(DafangBlocks.GRANITE_GRAY_BRICK5);
-        addDrop(DafangBlocks.GRANITE_GRAY_MATTE);
-        addDrop(DafangBlocks.GRANITE_GRAY_POLISHED);
-        addDrop(DafangBlocks.GRANITE_GRAY_TILES);
+            // 4. 注册墙 (通常直接掉落)
+            if (family.getWall() != null) {
+                addDrop(family.getWall());
+            }
+        }
     }
 }
