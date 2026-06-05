@@ -6,6 +6,8 @@ Dafang Construction 大方建材
 
 即使技术上完全可以实现，我们暂时不考虑加入连接纹理，拿到方块，大大方方地填充到合适的地方，开箱即用，就是本模组的设计哲学。
 
+![](D:\Programming\dafang-construction-template-1.20.1\run\screenshots\2026-06-05_20.39.24.png)
+
 Dafang Construction
 Traditional building blocks are rigid and uniform; every piece must fit perfectly within a strictly defined 1x1 grid. Dafang Construction introduces a completely new way of thinking about materials. Breaking away from the standard "grid mindset," we utilize the Pattern rendering mode powered by the Fusion Mod, allowing you to create large-scale, elongated brick effects that instantly shatter the limitations of single-block boundaries.
 
