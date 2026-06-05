@@ -14,6 +14,7 @@ public class DafangConstructionDataGenerator implements DataGeneratorEntrypoint 
 
         pack.addProvider(DafangLangEnUsProvider::new);
         pack.addProvider(DafangLangZhCnProvider::new);
+        pack.addProvider(DafangLangZhTwProvider::new);
         pack.addProvider(DafangModelProvider::new);
         //最好在客户端执行本数据生成器
         pack.addProvider(DafangFusionModelProvider::new);

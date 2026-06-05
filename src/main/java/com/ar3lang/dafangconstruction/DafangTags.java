@@ -24,6 +24,7 @@ public enum DafangTags {
     MARBLE("dafang.tag.marble"),
     GOLD("dafang.tag.gold"),
     SQUARE("dafang.tag.square"),
+    ARTISTIC("dafang.tag.artistic"),
     x4("dafang.tag.x4");
 
     private final String transKey;

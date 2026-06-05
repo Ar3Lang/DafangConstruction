@@ -53,7 +53,7 @@ public class DafangBlocks {
         registerFamily("granite_yellowrust_polished", FabricBlockSettings.copy(Blocks.STONE_BRICKS), new DafangTags[]{DafangTags.ROCK, DafangTags.POLISHED, DafangTags.x1}, DafangTextureType.PATTERN2);
         registerFamily("granite_yellowrust_matte", FabricBlockSettings.copy(Blocks.STONE_BRICKS), new DafangTags[]{DafangTags.ROCK, DafangTags.MATTE,DafangTags.FLAT}, DafangTextureType.PATTERN2);
         registerFamily("granite_yellowrust_tiles", FabricBlockSettings.copy(Blocks.STONE_BRICKS), new DafangTags[]{DafangTags.ROCK, DafangTags.RANDOM, DafangTags.x1}, DafangTextureType.RANDOM3);
-        registerFamily("granite_yellowrust_mushroom", FabricBlockSettings.copy(Blocks.STONE_BRICKS), new DafangTags[]{DafangTags.ROCK, DafangTags.RANDOM, DafangTags.x1}, DafangTextureType.PATTERN2);
+        registerFamily("granite_yellowrust_mushroom", FabricBlockSettings.copy(Blocks.STONE_BRICKS), new DafangTags[]{DafangTags.ROCK, DafangTags.ARTISTIC, DafangTags.x1}, DafangTextureType.PATTERN2);
 
 // ===== 泛红花岗岩 =====
         registerFamily("granite_red", FabricBlockSettings.copy(Blocks.STONE), new DafangTags[]{DafangTags.ROCK, DafangTags.RAW,DafangTags.FLAT}, DafangTextureType.PATTERN2, true);
@@ -65,7 +65,7 @@ public class DafangBlocks {
         registerFamily("granite_red_polished", FabricBlockSettings.copy(Blocks.STONE_BRICKS), new DafangTags[]{DafangTags.ROCK, DafangTags.POLISHED, DafangTags.x1}, DafangTextureType.PATTERN2);
         registerFamily("granite_red_matte", FabricBlockSettings.copy(Blocks.STONE_BRICKS), new DafangTags[]{DafangTags.ROCK, DafangTags.MATTE,DafangTags.FLAT}, DafangTextureType.PATTERN2);
         registerFamily("granite_red_tiles", FabricBlockSettings.copy(Blocks.STONE_BRICKS), new DafangTags[]{DafangTags.ROCK, DafangTags.RANDOM, DafangTags.x1}, DafangTextureType.RANDOM3);
-        registerFamily("granite_red_mushroom", FabricBlockSettings.copy(Blocks.STONE_BRICKS), new DafangTags[]{DafangTags.ROCK, DafangTags.RANDOM, DafangTags.x1}, DafangTextureType.PATTERN2);
+        registerFamily("granite_red_mushroom", FabricBlockSettings.copy(Blocks.STONE_BRICKS), new DafangTags[]{DafangTags.ROCK, DafangTags.ARTISTIC, DafangTags.x1}, DafangTextureType.PATTERN2);
 
 // ===== 银河灰 =====
         registerFamily("granite_galaxygray", FabricBlockSettings.copy(Blocks.STONE), new DafangTags[]{DafangTags.ROCK, DafangTags.RAW,DafangTags.FLAT}, DafangTextureType.PATTERN2, true);
@@ -88,7 +88,7 @@ public class DafangBlocks {
         registerFamily("granite_gray_polished", FabricBlockSettings.copy(Blocks.STONE_BRICKS), new DafangTags[]{DafangTags.ROCK, DafangTags.POLISHED, DafangTags.x1}, DafangTextureType.PATTERN2);
         registerFamily("granite_gray_matte", FabricBlockSettings.copy(Blocks.STONE_BRICKS), new DafangTags[]{DafangTags.ROCK, DafangTags.MATTE,DafangTags.FLAT}, DafangTextureType.PATTERN2);
         registerFamily("granite_gray_tiles", FabricBlockSettings.copy(Blocks.STONE_BRICKS), new DafangTags[]{DafangTags.ROCK, DafangTags.RANDOM, DafangTags.x1}, DafangTextureType.RANDOM3);
-        registerFamily("granite_gray_mushroom", FabricBlockSettings.copy(Blocks.STONE_BRICKS), new DafangTags[]{DafangTags.ROCK, DafangTags.x1}, DafangTextureType.PATTERN2);
+        registerFamily("granite_gray_mushroom", FabricBlockSettings.copy(Blocks.STONE_BRICKS), new DafangTags[]{DafangTags.ROCK,DafangTags.ARTISTIC, DafangTags.x1}, DafangTextureType.PATTERN2);
 
 // ===== 平滑石 =====
         registerFamily("dafang_smoothstone", FabricBlockSettings.copy(Blocks.SMOOTH_STONE), new DafangTags[]{DafangTags.ROCK, DafangTags.x1}, DafangTextureType.PATTERN2, true);
@@ -108,8 +108,8 @@ public class DafangBlocks {
         registerFamily("marble",FabricBlockSettings.copy(Blocks.CALCITE),new DafangTags[]{DafangTags.ROCK,DafangTags.MARBLE,DafangTags.RAW,DafangTags.FLAT},DafangTextureType.RECTANGLE4_2);
         registerFamily("marble_golden",FabricBlockSettings.copy(Blocks.CALCITE),new DafangTags[]{DafangTags.ROCK,DafangTags.MARBLE,DafangTags.GOLD,DafangTags.FLAT},DafangTextureType.RECTANGLE4_2);
         registerFamily("marble_black",FabricBlockSettings.copy(Blocks.DEEPSLATE),new DafangTags[]{DafangTags.ROCK,DafangTags.MARBLE,DafangTags.FLAT},DafangTextureType.RECTANGLE4_2);
-        registerFamily("marble_wood",FabricBlockSettings.copy(Blocks.CALCITE),new DafangTags[]{DafangTags.ROCK,DafangTags.MARBLE,DafangTags.FLAT},DafangTextureType.RECTANGLE4_2);
-        registerFamily("marble_wood_yellow",FabricBlockSettings.copy(Blocks.CALCITE),new DafangTags[]{DafangTags.ROCK,DafangTags.MARBLE,DafangTags.FLAT},DafangTextureType.RECTANGLE4_2);
+        registerFamily("marble_wood",FabricBlockSettings.copy(Blocks.CALCITE),new DafangTags[]{DafangTags.ROCK,DafangTags.MARBLE,DafangTags.FLAT,DafangTags.HORIZONTAL},DafangTextureType.RECTANGLE4_2);
+        registerFamily("marble_wood_yellow",FabricBlockSettings.copy(Blocks.CALCITE),new DafangTags[]{DafangTags.ROCK,DafangTags.MARBLE,DafangTags.FLAT,DafangTags.HORIZONTAL},DafangTextureType.RECTANGLE4_2);
 
         //水泥
         registerFamily("cement",FabricBlockSettings.copy(Blocks.LIGHT_GRAY_CONCRETE),new DafangTags[]{DafangTags.ROCK, DafangTags.CEMENT,DafangTags.FLAT},DafangTextureType.PATTERN4);
@@ -118,8 +118,8 @@ public class DafangBlocks {
         registerFamily("cement_plate_4",FabricBlockSettings.copy(Blocks.LIGHT_GRAY_CONCRETE),new DafangTags[]{DafangTags.CEMENT,DafangTags.SQUARE,DafangTags.x4},DafangTextureType.PATTERN8);
 
         //布料 羊毛 纺织
-        registerFamily("carpet_1",FabricBlockSettings.copy(Blocks.GRAY_WOOL),new DafangTags[]{DafangTags.WOOL, DafangTags.FLAT},DafangTextureType.PATTERN4);
-        registerFamily("carpet_2",FabricBlockSettings.copy(Blocks.GRAY_WOOL),new DafangTags[]{DafangTags.WOOL, DafangTags.SQUARE},DafangTextureType.PATTERN2);
+        registerFamily("carpet_1",FabricBlockSettings.copy(Blocks.GRAY_WOOL),new DafangTags[]{DafangTags.WOOL, DafangTags.FLAT, DafangTags.VERTICAL},DafangTextureType.PATTERN4);
+        registerFamily("carpet_2",FabricBlockSettings.copy(Blocks.GRAY_WOOL),new DafangTags[]{DafangTags.WOOL, DafangTags.SQUARE, DafangTags.CROSS},DafangTextureType.PATTERN2);
         registerFamily("fabric_pale",FabricBlockSettings.copy(Blocks.GRAY_WOOL),new DafangTags[]{DafangTags.WOOL, DafangTags.FLAT},DafangTextureType.PATTERN2);
 
         System.out.println(getAllFamilies());

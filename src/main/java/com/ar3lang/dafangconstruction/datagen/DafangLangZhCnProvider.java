@@ -22,6 +22,7 @@ public class DafangLangZhCnProvider extends FabricLanguageProvider {
         registerFamily(tb, "granite_yellowrust_polished", "磨制黄锈花岗岩");
         registerFamily(tb, "granite_yellowrust_matte", "哑光黄锈花岗岩砖");
         registerFamily(tb, "granite_yellowrust_tiles", "黄锈花岗岩砖");
+        registerFamily(tb, "granite_yellowrust_mushroom", "黄锈花岗岩蘑菇石砖");
 
 // ===== 泛红花岗岩 =====
         registerFamily(tb, "granite_red", "泛红花岗岩");
@@ -33,6 +34,7 @@ public class DafangLangZhCnProvider extends FabricLanguageProvider {
         registerFamily(tb, "granite_red_polished", "磨制泛红花岗岩");
         registerFamily(tb, "granite_red_matte", "哑光泛红花岗岩砖");
         registerFamily(tb, "granite_red_tiles", "泛红花岗岩砖");
+        registerFamily(tb, "granite_red_mushroom", "泛红花岗岩蘑菇石砖");
 
 // ===== 银河灰 =====
         registerFamily(tb, "granite_galaxygray", "银河灰花岗岩");
@@ -55,6 +57,7 @@ public class DafangLangZhCnProvider extends FabricLanguageProvider {
         registerFamily(tb, "granite_gray_polished", "灰花岗岩");
         registerFamily(tb, "granite_gray_matte", "灰花岗岩砖");
         registerFamily(tb, "granite_gray_tiles", "灰花岗岩砖");
+        registerFamily(tb, "granite_gray_mushroom", "灰花岗岩蘑菇石砖");
 
 // ===== 平滑石 =====
         registerFamily(tb, "dafang_smoothstone", "平滑石（精制）");
@@ -77,8 +80,26 @@ public class DafangLangZhCnProvider extends FabricLanguageProvider {
 
         tb.add("dafang.tooltip.granite_gray", "  灰花岗岩是虚构的称法，本材质中的灰花岗岩较扁平，整体呈浅灰色。\\n  模仿现实中的芝麻白型花岗岩，火烧面变种质感较粗糙，可用于现代建筑。");
 
-        tb.add("dafang.tooltip.dafang_smoothstone", " 平滑石是常规石材的精炼版本，通过熔炼工艺消除了表面粗糙的颗粒感，呈现出丝绸般的细腻质感。\\n 其中性的灰色调使其成为高端地面、画廊墙面和结构柱的理想选择。\\n 与原石不同，它具有一种成熟的哑光质感，能够柔和地散射光线，为工业和居家室内空间提供干净、专业的氛围。");
+        tb.add("dafang.tooltip.dafang_smoothstone", " 平滑石是常规石材的精炼版本，通过熔炼工艺消除了表面粗糙的颗粒感，呈现出丝绸般的细腻质感。\\n 其中性的灰色调使其成为高端地面、画廊墙面和结构柱的理想选择。");
         tb.add("dafang.tooltip.dafang_modern_1", " 大方现代建筑系列方块是基于灰花岗岩材质预制的一系列方块。\\n 拥有微微青色的主色调，和青色的填缝");
+
+        //大理石系列
+        registerFamily(tb,"marble","大理石");
+        registerFamily(tb,"marble_black","暗色大理石");
+        registerFamily(tb,"marble_golden","镶金大理石");
+        registerFamily(tb,"marble_wood","木纹石");
+        registerFamily(tb,"marble_wood_yellow","褐黄木纹石");
+
+        //水泥
+        registerFamily(tb,"cement","水泥");
+        registerFamily(tb,"cement_plate","水泥板");
+        registerFamily(tb,"cement_plate_2","水泥板 (x2)");
+        registerFamily(tb,"cement_plate_4","水泥板 (x4)");
+
+        //羊毛
+        registerFamily(tb,"carpet_1","地毯方块 (瓦楞海绵)");
+        registerFamily(tb,"carpet_2","地毯方块 (交错方块)");
+        registerFamily(tb,"fabric_pale","素朴布艺方块");
 
         // --- 工具提示与标签 ---
         tb.add("dafang.tooltip.titles.tags", "标签");
@@ -100,7 +121,12 @@ public class DafangLangZhCnProvider extends FabricLanguageProvider {
         tb.add("dafang.tag.x1", "正常比例");
         tb.add("dafang.tag.x1_5", "1.5x比例");
         tb.add("dafang.tag.x2", "2x比例");
+        tb.add("dafang.tag.x4", "4x比例");
         tb.add("dafang.tag.cross", "砖纹");
+        tb.add("dafang.tag.artistic","文艺");
+        tb.add("dafang.tag.square","方块");
+        tb.add("dafang.tag.gold","黄金");
+        tb.add("dafang.tag.flat","平铺");
 
     }
     private void registerFamily(TranslationBuilder tb, String familyKey, String baseName) {

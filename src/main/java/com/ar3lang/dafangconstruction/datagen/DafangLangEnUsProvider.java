@@ -24,6 +24,7 @@ public class DafangLangEnUsProvider extends FabricLanguageProvider {
         registerFamily(tb, "granite_yellowrust_polished", "Polished Yellow Rust Granite");
         registerFamily(tb, "granite_yellowrust_matte", "Matte Yellow Rust Granite Brick");
         registerFamily(tb, "granite_yellowrust_tiles", "Yellow Rust Granite Tiles");
+        registerFamily(tb, "granite_yellowrust_mushroom", "Yellow Rust Granite Mushroom Brick");
 
 // ===== 泛红花岗岩 =====
         registerFamily(tb, "granite_red", "Red-Speckled Granite");
@@ -36,6 +37,7 @@ public class DafangLangEnUsProvider extends FabricLanguageProvider {
         registerFamily(tb, "granite_red_polished", "Polished Red-Speckled Granite");
         registerFamily(tb, "granite_red_matte", "Matte Red-Speckled Granite Brick");
         registerFamily(tb, "granite_red_tiles", "Red-Speckled Granite Tiles");
+        registerFamily(tb, "granite_red_mushroom", "Red-Speckled Granite Mushroom Brick");
 
 // ===== 银河灰 =====
         registerFamily(tb, "granite_galaxygray", "Galaxy Gray Granite");
@@ -49,6 +51,7 @@ public class DafangLangEnUsProvider extends FabricLanguageProvider {
         registerFamily(tb, "granite_galaxygray_matte", "Matte Galaxy Gray Granite Brick");
         registerFamily(tb, "granite_galaxygray_tiles", "Galaxy Gray Granite Tiles");
 
+
 // ===== 灰花岗岩 =====
         registerFamily(tb, "granite_gray", "Gray Granite");
         tb.add("dafang.tooltip.granite_gray", "  'Gray Granite' is a fictional term. In this texture, the gray granite is relatively flat and appears light gray overall.\n  It mimics real-life 'Sesame White' type granite. The flamed variant has a rougher texture and can be used in modern architecture.");
@@ -60,6 +63,7 @@ public class DafangLangEnUsProvider extends FabricLanguageProvider {
         registerFamily(tb, "granite_gray_polished", "Gray Granite");
         registerFamily(tb, "granite_gray_matte", "Gray Granite Brick");
         registerFamily(tb, "granite_gray_tiles", "Gray Granite Tiles");
+        registerFamily(tb, "granite_gray_mushroom", "Gray Granite Mushroom Brick");
 
 // ===== 平滑石 =====
         registerFamily(tb, "dafang_smoothstone", "Smooth Stone (Refined)");
@@ -77,6 +81,24 @@ public class DafangLangEnUsProvider extends FabricLanguageProvider {
         registerFamily(tb, "dafang_modern_3", "Modern Architectural Panel (Vertical x2)");
         registerFamily(tb, "dafang_modern_4", "Modern Architectural Panel (Vertical x1.5)");
 
+        //大理石系列
+        registerFamily(tb,"marble","Marble");
+        registerFamily(tb,"marble_black","Black Marble");
+        registerFamily(tb,"marble_golden","Golden Marble");
+        registerFamily(tb,"marble_wood","Wood-Textured Marble");
+        registerFamily(tb,"marble_wood_yellow","Yellow Wood-Textured Marble");
+
+        //水泥
+        registerFamily(tb,"cement","Cement");
+        registerFamily(tb,"cement_plate","Cement Plate");
+        registerFamily(tb,"cement_plate_2","Cement Plate (x2)");
+        registerFamily(tb,"cement_plate_4","Cement Plate (x4)");
+
+        //羊毛
+        registerFamily(tb,"carpet_1","Carpet Block (Corrugation Sponge)");
+        registerFamily(tb,"carpet_2","Carpet Block (Staggered)");
+        registerFamily(tb,"fabric_pale","Pale Flatfabric");
+
         //Tooltip
         tb.add("dafang.tooltip.titles.tags","Tags");
         tb.add("dafang.tooltip.titles.info","Description");
@@ -85,7 +107,8 @@ public class DafangLangEnUsProvider extends FabricLanguageProvider {
         tb.add("dafang.tag.wool","Wool");
         tb.add("dafang.tag.wood","Wood");
         tb.add("dafang.tag.metal","Metal");
-        tb.add("dafang.tag.cement","Cement");        tb.add("dafang.tag.marble","Marble");
+        tb.add("dafang.tag.cement","Cement");
+        tb.add("dafang.tag.marble","Marble");
         tb.add("dafang.tag.raw","Raw Block");
         tb.add("dafang.tag.matte","Matte Finish");
         tb.add("dafang.tag.fire","Flamed Finish");
@@ -96,7 +119,12 @@ public class DafangLangEnUsProvider extends FabricLanguageProvider {
         tb.add("dafang.tag.x1","Normal Scale");
         tb.add("dafang.tag.x1_5","1.5x Scale");
         tb.add("dafang.tag.x2","2x Scale");
+        tb.add("dafang.tag.x4","4x Scale");
         tb.add("dafang.tag.cross","Brick Pattern");
+        tb.add("dafang.tag.artistic","Artistic");
+        tb.add("dafang.tag.square","Square");
+        tb.add("dafang.tag.gold","Golden");
+        tb.add("dafang.tag.flat","Flat");
 
     }
     private void registerFamily(TranslationBuilder tb, String familyKey, String baseName) {
