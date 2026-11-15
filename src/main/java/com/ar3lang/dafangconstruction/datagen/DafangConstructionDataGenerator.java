@@ -1,6 +1,5 @@
-package com.ar3lang.dafangconstruction;
+package com.ar3lang.dafangconstruction.datagen;
 
-import com.ar3lang.dafangconstruction.block.DafangBlocks;
 import com.ar3lang.dafangconstruction.datagen.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;

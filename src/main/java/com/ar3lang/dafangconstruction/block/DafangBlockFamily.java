@@ -1,12 +1,5 @@
 package com.ar3lang.dafangconstruction.block;
 
-import com.ar3lang.dafangconstruction.DafangTextureType;
-import com.ar3lang.dafangconstruction.datagen.DafangTextureMetadataProvider;
-import com.supermartijn642.fusion.api.texture.DefaultTextureTypes;
-import com.supermartijn642.fusion.api.texture.TextureType;
-import com.supermartijn642.fusion.api.texture.data.BaseTextureData;
-import com.supermartijn642.fusion.api.texture.data.ContinuousTextureData;
-import com.supermartijn642.fusion.api.texture.data.RandomTextureData;
 import net.minecraft.block.Block;
 
 public class DafangBlockFamily {

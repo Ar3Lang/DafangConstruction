@@ -5,7 +5,7 @@ import com.ar3lang.dafangconstruction.block.DafangBlockFamily;
 import com.ar3lang.dafangconstruction.block.DafangBlocks;
 import com.supermartijn642.fusion.api.model.DefaultModelTypes;
 import com.supermartijn642.fusion.api.model.ModelInstance;
-import com.supermartijn642.fusion.api.model.data.BaseModelDataBuilder;
+import com.supermartijn642.fusion.api.model.types.base.BaseModelData;
 import com.supermartijn642.fusion.api.provider.FusionModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.block.Block;
@@ -41,22 +41,21 @@ public class DafangFusionModelProvider extends FusionModelProvider {
         }
     }
 
-    // --- 以下保持你的私有工具方法逻辑不变，确保兼容性 ---
 
     private void addBaseModel(Block block) {
         Identifier id = new Identifier(DafangConstruction.MOD_ID, "block/" + Registries.BLOCK.getId(block).getPath());
-        var baseData = BaseModelDataBuilder.builder()
+        var baseData = BaseModelData.builder()
             .parent(new Identifier("minecraft", "block/cube_all"))
-            .texture("all", id)
+            .material("all", id)
             .build();
         super.addModel(id, ModelInstance.of(DefaultModelTypes.BASE, baseData));
     }
     private void addBaseModel(Block block, String cata) {
         Identifier txid = new Identifier(DafangConstruction.MOD_ID, "block/" + cata + "/" + Registries.BLOCK.getId(block).getPath());
         Identifier modelId = new Identifier(DafangConstruction.MOD_ID, "block/" + Registries.BLOCK.getId(block).getPath());
-        var baseData = BaseModelDataBuilder.builder()
+        var baseData = BaseModelData.builder()
             .parent(new Identifier("minecraft", "block/cube_all"))
-            .texture("all", txid)
+            .material("all", txid)
             .build();
         super.addModel(modelId, ModelInstance.of(DefaultModelTypes.BASE, baseData));
     }
@@ -66,15 +65,15 @@ public class DafangFusionModelProvider extends FusionModelProvider {
         Identifier slabPathId = new Identifier(DafangConstruction.MOD_ID, "block/" + Registries.BLOCK.getId(slabBlock).getPath());
         Identifier slabTopPathId = new Identifier(DafangConstruction.MOD_ID, slabPathId.getPath() + "_top");
 
-        var bottomData = BaseModelDataBuilder.builder()
+        var bottomData = BaseModelData.builder()
             .parent(new Identifier("minecraft", "block/slab"))
-            .texture("bottom", baseTextureId).texture("top", baseTextureId).texture("side", baseTextureId)
+            .material("bottom", baseTextureId).material("top", baseTextureId).material("side", baseTextureId)
             .build();
         super.addModel(slabPathId, ModelInstance.of(DefaultModelTypes.BASE, bottomData));
 
-        var topData = BaseModelDataBuilder.builder()
+        var topData = BaseModelData.builder()
             .parent(new Identifier("minecraft", "block/slab_top"))
-            .texture("bottom", baseTextureId).texture("top", baseTextureId).texture("side", baseTextureId)
+            .material("bottom", baseTextureId).material("top", baseTextureId).material("side", baseTextureId)
             .build();
         super.addModel(slabTopPathId, ModelInstance.of(DefaultModelTypes.BASE, topData));
     }
@@ -83,15 +82,15 @@ public class DafangFusionModelProvider extends FusionModelProvider {
         Identifier slabPathId = new Identifier(DafangConstruction.MOD_ID, "block/" + Registries.BLOCK.getId(slabBlock).getPath());
         Identifier slabTopPathId = new Identifier(DafangConstruction.MOD_ID, slabPathId.getPath() + "_top");
 
-        var bottomData = BaseModelDataBuilder.builder()
+        var bottomData = BaseModelData.builder()
             .parent(new Identifier("minecraft", "block/slab"))
-            .texture("bottom", baseTextureId).texture("top", baseTextureId).texture("side", baseTextureId)
+            .material("bottom", baseTextureId).material("top", baseTextureId).material("side", baseTextureId)
             .build();
         super.addModel(slabPathId, ModelInstance.of(DefaultModelTypes.BASE, bottomData));
 
-        var topData = BaseModelDataBuilder.builder()
+        var topData = BaseModelData.builder()
             .parent(new Identifier("minecraft", "block/slab_top"))
-            .texture("bottom", baseTextureId).texture("top", baseTextureId).texture("side", baseTextureId)
+            .material("bottom", baseTextureId).material("top", baseTextureId).material("side", baseTextureId)
             .build();
         super.addModel(slabTopPathId, ModelInstance.of(DefaultModelTypes.BASE, topData));
     }
@@ -103,9 +102,9 @@ public class DafangFusionModelProvider extends FusionModelProvider {
         String[] parents = {"stairs", "inner_stairs", "outer_stairs"};
 
         for (int i = 0; i < 3; i++) {
-            var data = BaseModelDataBuilder.builder()
+            var data = BaseModelData.builder()
                 .parent(new Identifier("minecraft", "block/" + parents[i]))
-                .texture("bottom", tex).texture("top", tex).texture("side", tex)
+                .material("bottom", tex).material("top", tex).material("side", tex)
                 .build();
             super.addModel(new Identifier(DafangConstruction.MOD_ID, path + variants[i]), ModelInstance.of(DefaultModelTypes.BASE, data));
         }
@@ -117,9 +116,9 @@ public class DafangFusionModelProvider extends FusionModelProvider {
         String[] parents = {"stairs", "inner_stairs", "outer_stairs"};
 
         for (int i = 0; i < 3; i++) {
-            var data = BaseModelDataBuilder.builder()
+            var data = BaseModelData.builder()
                 .parent(new Identifier("minecraft", "block/" + parents[i]))
-                .texture("bottom", tex).texture("top", tex).texture("side", tex)
+                .material("bottom", tex).material("top", tex).material("side", tex)
                 .build();
             super.addModel(new Identifier(DafangConstruction.MOD_ID, path + variants[i]), ModelInstance.of(DefaultModelTypes.BASE, data));
         }
@@ -133,9 +132,9 @@ public class DafangFusionModelProvider extends FusionModelProvider {
         String[] parents = {"template_wall_post", "template_wall_side", "template_wall_side_tall", "wall_inventory"};
 
         for (int i = 0; i < 4; i++) {
-            var data = BaseModelDataBuilder.builder()
+            var data = BaseModelData.builder()
                 .parent(new Identifier("minecraft", "block/" + parents[i]))
-                .texture("wall", tex)
+                .material("wall", tex)
                 .build();
             super.addModel(new Identifier(DafangConstruction.MOD_ID, path + variants[i]), ModelInstance.of(DefaultModelTypes.BASE, data));
         }
@@ -147,9 +146,9 @@ public class DafangFusionModelProvider extends FusionModelProvider {
         String[] parents = {"template_wall_post", "template_wall_side", "template_wall_side_tall", "wall_inventory"};
 
         for (int i = 0; i < 4; i++) {
-            var data = BaseModelDataBuilder.builder()
+            var data = BaseModelData.builder()
                 .parent(new Identifier("minecraft", "block/" + parents[i]))
-                .texture("wall", tex)
+                .material("wall", tex)
                 .build();
             super.addModel(new Identifier(DafangConstruction.MOD_ID, path + variants[i]), ModelInstance.of(DefaultModelTypes.BASE, data));
         }

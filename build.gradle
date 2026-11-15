@@ -1,142 +1,139 @@
 plugins {
-	id 'fabric-loom' version '1.7-SNAPSHOT'
-	id 'maven-publish'
-	id "me.modmuss50.mod-publish-plugin" version "0.6.3"
+  id 'fabric-loom' version '1.19-SNAPSHOT'
+  id 'maven-publish'
+  id "me.modmuss50.mod-publish-plugin" version "0.6.3"
 }
 
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
+// 1. Gradle 9 修复：将顶层的 archivesBaseName 改为 base 块
+base {
+  archivesName = project.archives_base_name
+}
 
-archivesBaseName = project.archives_base_name
 version = "${mod_version}+${minecraft_version}"
 group = project.maven_group
 
-repositories {
-	maven { url 'https://server.bbkr.space/artifactory/libs-release' }
-	maven { url 'https://maven.terraformersmc.com/' }
-	maven { url "https://maven.shedaniel.me/" }
-	maven { url 'https://www.cursemaven.com' }
-	maven { url 'https://maven.minecraftforge.net/' }
+java {
+  toolchain {
+    // 告诉 Gradle：编译代码时使用 Java 17
+    languageVersion = JavaLanguageVersion.of(17)
+  }
+}
 
+repositories {
+  maven { url 'https://maven.aliyun.com/repository/public' }
+//  maven { url 'https://server.bbkr.space/artifactory/libs-release' }
+  maven { url 'https://maven.terraformersmc.com/' }
+  maven { url "https://maven.shedaniel.me/" }
+  maven { url 'https://www.cursemaven.com' }
+  maven { url 'https://maven.minecraftforge.net/' }
 }
 
 dependencies {
   compileOnly 'org.jetbrains:annotations:24.0.0'
 
-
   // To change the versions see the gradle.properties file
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+  minecraft "com.mojang:minecraft:${project.minecraft_version}"
+  mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+  modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	// Fabric API
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+  // Fabric API
+  modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	// Cloth
-	modImplementation "me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}"
+  // Cloth
+  modImplementation "me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}"
 
-	// Terraform
-	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
-	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
-	modImplementation "com.terraformersmc.terraform-api:terraform-shapes-api-v1:${project.terraform_version}"
-	modImplementation "com.terraformersmc:biolith:${biolith_version}"
+  // Terraform
+  modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
+  include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_version}"
+  modImplementation "com.terraformersmc.terraform-api:terraform-shapes-api-v1:${project.terraform_version}"
+  // 修复：补上 project. 前缀
+  modImplementation "com.terraformersmc:biolith:${project.biolith_version}"
 
-	// Promenade
-	modImplementation "curse.maven:promenade-399648:${project.promenade_version}"
-	modImplementation "curse.maven:dawnapi-399309:${project.dawn_version}"
+  // Promenade
+  modImplementation "curse.maven:promenade-399648:${project.promenade_version}"
+  modImplementation "curse.maven:dawnapi-399309:${project.dawn_version}"
 
   // Fusion
-//  modImplementation "curse.maven:fusion-854949:7471510"
-  modCompileOnly "curse.maven:fusion-854949:7471510"
-//  modRuntimeOnly "curse.maven:fusion-854949:7471510"
-
+  modImplementation "curse.maven:fusion-connected-textures-854949:${project.fusion_version}"
 }
+
+// 3. 使用 Loom 1.15 官方推荐的 DataGen 配置写法
+fabricApi {
+  configureDataGeneration {
+    client = true // 确保在客户端环境运行 Datagen
+    modId = "dafangconstruction-datagen" // 独立的 modid
+    // 如果你想把 datagen 代码彻底隔离到 src/datagen/java，可以取消注释下面这行
+    // createSourceSet = true
+  }
+}
+
 sourceSets {
   main {
-    // Java 源代码目录（保持不变）
-
-    // 资源目录：必须包含原有的 resources，再加上 generated
+    // 资源目录：包含原有的 resources 和生成的 generated
     resources {
-      // srcDirs 默认已经包含 src/main/resources
-      // 我们只需要追加 generated
       srcDirs += file("src/main/generated")
     }
   }
 }
-loom {
-  runs {
-    // 修改默认的 datagen 配置，强制使用客户端环境
-    datagen {
-      // 继承 client 运行配置（关键！）
-      inherit client
 
-      // 设置主类为数据生成器
-//      serverSourceClasses = false
-      source = sourceSets.main
-
-      // 强制设置为客户端环境
-      property "fabric.dli.env", "client"
-      property "fabric.dli.main", "net.fabricmc.loader.impl.launch.knot.KnotClient"
-
-      // DataGen 参数
-      property "fabric-api.datagen", ""
-      property "fabric-api.datagen.output-dir", file("src/main/generated").absolutePath
-      property "fabric-api.datagen.modid", "dafangconstruction"
-    }
+processResources {
+  inputs.property "version", project.version
+  filesMatching("fabric.mod.json") {
+    expand "version": project.version
   }
 }
 
-//fabricApi {
-//	configureDataGeneration(){
-////    createSourceSet = false  // 只用 main
-////    modId = "dafangconstruction"
-//  }
-//}
-
-processResources {
-	inputs.property "version", project.version
-
-	filesMatching("fabric.mod.json") {
-		expand "version": project.version
-	}
-}
-
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 17
+  it.options.release = 17
 }
+
+// 移除旧的 loom { runs { datagenClient } } 块，已由 fabricApi 块自动接管
+
 
 jar {
-	from("LICENSE") {
-		rename { "${it}_${project.archivesBaseName}" }
-	}
+  from("LICENSE") {
+    rename { "${it}_${project.archives_base_name}" }
+  }
+}
+
+// 确保 Datagen 代码不进入最终发布包（对 remapJar 生效）
+tasks.named('remapJar') {
+  exclude 'com/ar3lang/dafangconstruction/datagen/**'
+  // 如果 DafangTextureType 在根目录且只在 datagen 用，且不希望在发布版里，可以加这行：
+  // exclude 'com/ar3lang/dafangconstruction/DafangTextureType.class'
 }
 
 publishMods {
-	file = remapJar.archiveFile
-	changelog = file("changelog.md").text
-	type = STABLE
-	modLoaders.add("fabric")
+  file = remapJar.archiveFile
+  changelog = file("changelog.md").text
+  type = STABLE
+  modLoaders.add("fabric")
 
-	modrinth {
-		accessToken = providers.environmentVariable("MODRINTH_TOKEN")
-		projectId = "zFiY2Go0"
-		minecraftVersions.add("${minecraft_version}")
-		minecraftVersions.add("1.20")
-		requires {
-			slug = "fabric-api"
-		}
-	}
+  modrinth {
+    accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+    projectId = "zFiY2Go0"
+    minecraftVersions.add("${minecraft_version}")
+    minecraftVersions.add("1.20")
+    requires {
+      slug = "fabric-api"
+    }
+    requires {
+      slug = "fusion-connected-textures"
+    }
+  }
 
-	curseforge {
-		accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
-		projectId = "312289"
-		displayName = "(${project.minecraft_version}) Blockus $project.version"
-		minecraftVersions.add("${minecraft_version}")
-		minecraftVersions.add("1.20")
-		requires {
-			slug = "fabric-api"
-		}
-	}
+  curseforge {
+    accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
+    projectId = "312289"
+    // 修复：把原来的 Blockus 错字改回你的模组名
+    displayName = "(${project.minecraft_version}) Dafang Construction $project.version"
+    minecraftVersions.add("${minecraft_version}")
+    minecraftVersions.add("1.20")
+    requires {
+      slug = "fabric-api"
+    }
+    requires {
+      slug = "fusion-connected-textures"
+    }
+  }
 }
-
-

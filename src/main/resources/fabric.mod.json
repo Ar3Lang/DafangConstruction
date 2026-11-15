@@ -22,7 +22,7 @@
       "com.ar3lang.dafangconstruction.DafangConstructionClient"
     ],
 		"fabric-datagen": [
-			"com.ar3lang.dafangconstruction.DafangConstructionDataGenerator"
+			"com.ar3lang.dafangconstruction.datagen.DafangConstructionDataGenerator"
 		]
 	},
 	"mixins": [

@@ -1,8 +1,6 @@
 package com.ar3lang.dafangconstruction.block;
 
-import com.ar3lang.dafangconstruction.DafangTextureType;
 import com.ar3lang.dafangconstruction.DafangTooltipBlockItem;
-import com.ar3lang.dafangconstruction.datagen.DafangTextureMetadataProvider;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -10,11 +8,8 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-
 import java.util.Collection;
 import java.util.Map;
-
-
 import com.ar3lang.dafangconstruction.DafangConstruction;
 import com.ar3lang.dafangconstruction.DafangTags;
 
