@@ -38,6 +38,7 @@ dependencies {
 
   // Fabric API
   modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+  modImplementation "net.fabricmc.fabric-api:fabric-data-generation-api-v1"
 
   // Cloth
   modImplementation "me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}"
@@ -61,9 +62,9 @@ dependencies {
 fabricApi {
   configureDataGeneration {
     client = true // 确保在客户端环境运行 Datagen
-    modId = "dafangconstruction-datagen" // 独立的 modid
+//    modId = "dafangconstruction-datagen" // 独立的 modid
     // 如果你想把 datagen 代码彻底隔离到 src/datagen/java，可以取消注释下面这行
-    // createSourceSet = true
+//     createSourceSet = true
   }
 }
 

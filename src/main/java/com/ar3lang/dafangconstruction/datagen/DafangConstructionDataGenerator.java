@@ -1,6 +1,5 @@
 package com.ar3lang.dafangconstruction.datagen;
 
-import com.ar3lang.dafangconstruction.datagen.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -8,6 +7,7 @@ public class DafangConstructionDataGenerator implements DataGeneratorEntrypoint 
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
+        System.out.println("Datagen entrypoint called!");
 
 //        DafangBlocks.init();
 

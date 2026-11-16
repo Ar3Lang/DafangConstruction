@@ -5,7 +5,7 @@
 	"name": "Dafang Construction",
   "description": "Dafang Construction introduces a new perspective on building materials. Unlike the standard 'grid mindset,' we utilize the Pattern rendering mode from the Fusion Mod to enable large-scale, elongated brick effects that shatter the 1x1 block boundary.\n\nFeaturing photorealistic 32x32 textures inspired by modern public architecture, these blocks are obtained via crafting and can be processed through a Stonecutter for varied textures and sizes. Standard slabs, stairs, and walls are also included. \n\nNote: Fusion Mod MUST be installed on the client for correct rendering. \n\nDesign Philosophy: No connected textures, no complex setups. Just pick a block and build boldly. Out-of-the-box utility is our core philosophy.",
 	"authors": [
-		"Me!"
+		"Ar3Lang"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
