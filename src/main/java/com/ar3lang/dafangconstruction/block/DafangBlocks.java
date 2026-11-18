@@ -107,7 +107,7 @@ public class DafangBlocks {
         registerFamily("marble_wood_yellow",FabricBlockSettings.copy(Blocks.CALCITE),new DafangTags[]{DafangTags.ROCK,DafangTags.MARBLE,DafangTags.FLAT,DafangTags.HORIZONTAL},DafangTextureType.RECTANGLE4_2);
 
         //水泥
-        registerFamily("cement",FabricBlockSettings.copy(Blocks.LIGHT_GRAY_CONCRETE),new DafangTags[]{DafangTags.ROCK, DafangTags.CEMENT,DafangTags.FLAT},DafangTextureType.PATTERN4);
+        registerFamily("cement",FabricBlockSettings.copy(Blocks.LIGHT_GRAY_CONCRETE),new DafangTags[]{DafangTags.ROCK, DafangTags.CEMENT,DafangTags.FLAT},DafangTextureType.PATTERN8);
         registerFamily("cement_plate",FabricBlockSettings.copy(Blocks.LIGHT_GRAY_CONCRETE),new DafangTags[]{DafangTags.CEMENT,DafangTags.SQUARE,DafangTags.x1},DafangTextureType.PATTERN4);
         registerFamily("cement_plate_2",FabricBlockSettings.copy(Blocks.LIGHT_GRAY_CONCRETE),new DafangTags[]{DafangTags.CEMENT,DafangTags.SQUARE,DafangTags.x2},DafangTextureType.PATTERN4);
         registerFamily("cement_plate_4",FabricBlockSettings.copy(Blocks.LIGHT_GRAY_CONCRETE),new DafangTags[]{DafangTags.CEMENT,DafangTags.SQUARE,DafangTags.x4},DafangTextureType.PATTERN8);
