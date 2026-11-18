@@ -23,16 +23,7 @@ public class DafangModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator generator) {
         for (DafangBlockFamily family : DafangBlocks.getAllFamilies()) {
-            //分类
-            //石头
-//            if(family.getId().startsWith("granite")||family.getId().startsWith("cement")||family.getId().startsWith("marble")||family.getId().startsWith("dafang_modern")||family.getId().startsWith("dafang_smoothstone"))
-//            {
-//               registerFusionBlockState(generator, family.getBase(), "stone");
-//            } else if (family.getId().startsWith("carpet")||family.getId().startsWith("fabric"))
-//            {
-//                registerFusionBlockState(generator, family.getBase(), "cloth");
-//            }
-//            else
+
                 if (family.getBase() != null)
                 {
                     registerFusionBlockState(generator, family.getBase());
@@ -53,8 +44,6 @@ public class DafangModelProvider extends FabricModelProvider {
             }
         }
     }
-
-    // --- 以下是辅助方法，保持你的 Fusion 逻辑不变 ---
 
     private void registerFusionBlockState(BlockStateModelGenerator generator, Block block) {
         Identifier blockId = Registries.BLOCK.getId(block);

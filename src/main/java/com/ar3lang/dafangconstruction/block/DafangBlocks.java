@@ -86,7 +86,7 @@ public class DafangBlocks {
         registerFamily("granite_gray_mushroom", FabricBlockSettings.copy(Blocks.STONE_BRICKS), new DafangTags[]{DafangTags.ROCK,DafangTags.ARTISTIC, DafangTags.x1}, DafangTextureType.PATTERN2);
 
 // ===== 平滑石 =====
-        registerFamily("dafang_smoothstone", FabricBlockSettings.copy(Blocks.SMOOTH_STONE), new DafangTags[]{DafangTags.ROCK, DafangTags.x1}, DafangTextureType.PATTERN2, true);
+        registerFamily("dafang_smoothstone", FabricBlockSettings.copy(Blocks.SMOOTH_STONE), new DafangTags[]{DafangTags.ROCK, DafangTags.x1}, DafangTextureType.PATTERN1, true);
         registerFamily("dafang_smoothstone_brick1", FabricBlockSettings.copy(Blocks.SMOOTH_STONE), new DafangTags[]{DafangTags.ROCK, DafangTags.CROSS, DafangTags.x2}, DafangTextureType.PATTERN2);
         registerFamily("dafang_smoothstone_brick2", FabricBlockSettings.copy(Blocks.SMOOTH_STONE), new DafangTags[]{DafangTags.ROCK, DafangTags.HORIZONTAL, DafangTags.x2}, DafangTextureType.PATTERN2);
         registerFamily("dafang_smoothstone_brick3", FabricBlockSettings.copy(Blocks.SMOOTH_STONE), new DafangTags[]{DafangTags.ROCK, DafangTags.HORIZONTAL, DafangTags.x1_5}, DafangTextureType.PATTERN1_5);

@@ -15,12 +15,8 @@ public class DafangTextureMetadataProvider extends FusionTextureMetadataProvider
         super(DafangConstruction.MOD_ID, output);
     }
 
-    // --- 核心修改在这里 ---
     private void addTextureMetadata(Identifier id, DafangTextureType type) {
-        // 1. 调用工厂类，获取包装好的 Fusion 数据
         FusionTextureFactory.FusionTextureData fusionData = FusionTextureFactory.build(type);
-
-        // 2. 解包并注册给 Provider
         super.addTextureMetadata(
             id,
             fusionData.type(),

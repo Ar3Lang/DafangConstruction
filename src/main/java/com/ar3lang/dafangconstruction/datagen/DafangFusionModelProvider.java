@@ -12,6 +12,8 @@ import net.minecraft.block.Block;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
+import java.util.List;
+
 public class DafangFusionModelProvider extends FusionModelProvider {
     public DafangFusionModelProvider(FabricDataOutput output) {
         super(DafangConstruction.MOD_ID, output);
@@ -21,17 +23,28 @@ public class DafangFusionModelProvider extends FusionModelProvider {
     protected void generate() {
 
         for (DafangBlockFamily family : DafangBlocks.getAllFamilies()) {
+            String id = family.getId();
+            String category = null;
 
-            if (family.getId().startsWith("granite") || family.getId().startsWith("cement") || family.getId().startsWith("marble") || family.getId().startsWith("dafang_modern") || family.getId().startsWith("dafang_smoothstone")) {
-                addBaseModel(family.getBase(), "stone");
-                addSlabModels(family.getBase(), family.getSlab(), "stone");
-                addStairModels(family.getBase(), family.getStairs(), "stone");
-                addWallModels(family.getBase(), family.getWall(), "stone");
-            } else if (family.getId().startsWith("carpet") || family.getId().startsWith("fabric")) {
-                addBaseModel(family.getBase(), "cloth");
-                addSlabModels(family.getBase(), family.getSlab(), "cloth");
-                addStairModels(family.getBase(), family.getStairs(), "cloth");
-                addWallModels(family.getBase(), family.getWall(), "cloth");
+            // 此处决定贴图路径文件夹分类
+            if (List.of("granite",
+                    "cement",
+                    "marble",
+                    "dafang_modern",
+                    "dafang_smoothstone")
+                .stream().anyMatch(id::startsWith)) {
+                category = "stone";
+            } else if (List.of("carpet",
+                    "fabric")
+                .stream().anyMatch(id::startsWith)) {
+                category = "cloth";
+            }
+            
+            if (category != null) {
+                addBaseModel(family.getBase(), category);
+                addSlabModels(family.getBase(), family.getSlab(), category);
+                addStairModels(family.getBase(), family.getStairs(), category);
+                addWallModels(family.getBase(), family.getWall(), category);
             } else if (family.getBase() != null) {
                 addBaseModel(family.getBase());
                 addSlabModels(family.getBase(), family.getSlab());

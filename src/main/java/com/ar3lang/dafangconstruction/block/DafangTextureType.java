@@ -5,6 +5,7 @@ import java.util.Map;
 
 public enum DafangTextureType {
     // 连续型纹理，传递 rows 和 columns 参数
+    PATTERN1(TextureMode.CONTINUOUS,new Props().set("rows",1).set("columns",1)),
     PATTERN1_5(TextureMode.CONTINUOUS, new Props().set("rows", 3).set("columns", 3)),
     PATTERN2(TextureMode.CONTINUOUS, new Props().set("rows", 2).set("columns", 2)),
     PATTERN4(TextureMode.CONTINUOUS, new Props().set("rows", 4).set("columns", 4)),
